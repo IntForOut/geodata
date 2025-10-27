@@ -27,6 +27,7 @@
 	<owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
 	<owl:imports rdf:resource="http://www.w3.org/ns/dcat3"/>
 	<owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
+	<owl:imports rdf:resource="http://data.ign.fr/def/topo#"/>
 	<rdfs:comment>Ontology to describe geodatasets in support of knowledge production and transfer</rdfs:comment>
 	<terms:title xml:lang="fr">Ontologie des jeux de données géospatiales</terms:title>
     <terms:title xml:lang="en">Ontology for Geospatial Datasets</terms:title>
