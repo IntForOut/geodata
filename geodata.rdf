@@ -20,6 +20,7 @@
 	xmlns:vann="http://purl.org/vocab/vann/"
 	xmlns:terms="http://purl.org/dc/terms/"
 	xmlns:vocab="http://www.w3.org/1999/xhtml/vocab#"
+	xmlns:topo="http://data.ign.fr/def/topo#"
 	xmlns:schema="http://schema.org/">
 
 <rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata">
