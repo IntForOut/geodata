@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
 	xmlns="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
 	xmlns:org="http://www.w3.org/ns/org#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
 	xmlns:pav="http://purl.org/pav/"
@@ -29,7 +28,12 @@
 	<owl:imports rdf:resource="http://www.w3.org/ns/dcat3"/>
 	<owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
 	<rdfs:comment>Ontology to describe geodatasets in support of knowledge production and transfer</rdfs:comment>
+	<terms:title xml:lang="fr">Ontologie des jeux de données géospatiales</terms:title>
+    <terms:title xml:lang="en">Ontology for Geospatial Datasets</terms:title>
+    <vann:preferredNamespacePrefix>geodata</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri rdf:resource="https://intforout.github.io/geodata#"/>
 </rdf:Description>
+
 <!--  -->
 <!--  -->
 <!-- ################################################################# -->

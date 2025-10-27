@@ -1,0 +1,3873 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Ontologie des jeux de données géospatiales</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://intforout.github.io/geodata#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://intforout.github.io/geodata#","name":"Ontologie des jeux de données géospatiales", "headline":"Document describing the ontology https://intforout.github.io/geodata#", "dateReleased":"Mon Oct 27 15:28:56 CET 2025"}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Sommaire</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> <a href="index-fr.html"><b>fr</b></a> </div>
+<h1>Ontologie des jeux de données géospatiales</h1>
+
+
+<dl>
+<dt>Derni&egrave; re version:</dt>
+<dd><a href="https://intforout.github.io/geodata#">https://intforout.github.io/geodata#</a></dd>
+<dt>Ontologies import&eacute;es:</dt>
+<dd><a href="http://www.w3.org/2004/02/skos/core">core</a></dd><dd><a href="http://www.w3.org/ns/dcat">dcat</a></dd><dd><a href="http://www.w3.org/ns/prov-o#">prov-o#</a></dd>
+
+<dt>T&eacute;l&eacute;charger s&eacute;rialisation:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>Licence:</dt><dd><a href="http://URIdelalicence.example.org" target="_blank"><img src="https://img.shields.io/badge/License-nom%20de%20la%20licence-blue.svg" alt="http://URIdelalicence.example.org" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citer en tant que:</dt>
+<dd> Ontologie des jeux de données géospatiales.</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>R&eacute;sum&eacute;</h2><span class="markdown">
+Ceci est un r&eacute;sum&eacute; automatique . Le r&eacute;sum&eacute; doit contenir quelques phrases qui r&eacute;sument l'ontologie et son utilit&eacute;.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> retour au <a href="#toc">sommaire</a></span></h2>
+<span class="markdown">
+Ceci est une introduction automatique. L'introduction doit d&eacute;crire bri&egrave; vement l'ontologie, motiver son d&eacute;veloppement, l'&eacute;tat de l'art, les objectifs.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Espaces de noms d&eacute;clar&eacute;s</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Espaces de noms utilis&eacute;s dans ce document </caption>
+<tbody>
+<tr><td><b>adms</b></td><td>&lt;http://www.w3.org/ns/adms#&gt;</td></tr>
+<tr><td><b>bibo</b></td><td>&lt;http://purl.org/ontology/bibo/&gt;</td></tr>
+<tr><td><b>core</b></td><td>&lt;http://purl.org/vocab/frbr/core#&gt;</td></tr>
+<tr><td><b>dcam</b></td><td>&lt;http://purl.org/dc/dcam/&gt;</td></tr>
+<tr><td><b>dcat</b></td><td>&lt;http://www.w3.org/ns/dcat#&gt;</td></tr>
+<tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/0.1/&gt;</td></tr>
+<tr><td><b>geodata</b></td><td>&lt;http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#&gt;</td></tr>
+<tr><td><b>https</b></td><td>&lt;https://&gt;</td></tr>
+<tr><td><b>org</b></td><td>&lt;http://www.w3.org/ns/org#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>pav</b></td><td>&lt;http://purl.org/pav/&gt;</td></tr>
+<tr><td><b>prov</b></td><td>&lt;http://www.w3.org/ns/prov#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>schema</b></td><td>&lt;http://schema.org/&gt;</td></tr>
+<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core#&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>topo</b></td><td>&lt;http://data.ign.fr/def/topo#&gt;</td></tr>
+<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann/&gt;</td></tr>
+<tr><td><b>vocab</b></td><td>&lt;http://www.w3.org/1999/xhtml/vocab#&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Ontologie des jeux de données géospatiales: Aper&ccedil;u <span class="backlink"> retour au <a href="#toc">sommaire</a></span></h2>
+<span class="markdown">
+Cette ontologie a les classes et propri&eacute;t&eacute;s suivantes.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/AgentClass" title="http://purl.org/dc/terms/AgentClass">
+         <span>Agent Class</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection">
+         <span>Collection</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem">
+         <span>Collection Item</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+         title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#DatasetSeries" title="http://www.w3.org/ns/dcat#DatasetSeries">Dataset series</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/FileFormat" title="http://purl.org/dc/terms/FileFormat">
+         <span>File Format</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process">
+         <span>Geodata process</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset">
+         <span>Geodataset</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series">
+         <span>Geodataset series</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/Jurisdiction" title="http://purl.org/dc/terms/Jurisdiction">
+         <span>Jurisdiction</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/LicenseDocument" title="http://purl.org/dc/terms/LicenseDocument">
+         <span>License Document</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/Location" title="http://purl.org/dc/terms/Location">
+         <span>Location</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/MediaType" title="http://purl.org/dc/terms/MediaType">
+         <span>Media Type</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#OrderedCollection"
+         title="http://www.w3.org/2004/02/skos/core#OrderedCollection">Ordered Collection</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/PeriodOfTime" title="http://purl.org/dc/terms/PeriodOfTime">
+         <span>Period of Time</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/PhysicalMedium" title="http://purl.org/dc/terms/PhysicalMedium">
+         <span>Physical Medium</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#CatalogRecord" title="http://www.w3.org/ns/dcat#CatalogRecord">Registre du catalogue</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#Relationship" title="http://www.w3.org/ns/dcat#Relationship">Relationship</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation">
+         <span>Representation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#Role" title="http://www.w3.org/ns/dcat#Role">Role</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/SizeOrDuration" title="http://purl.org/dc/terms/SizeOrDuration">
+         <span>Size or Duration</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#catalog" title="http://www.w3.org/ns/dcat#catalog">catalog</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#compressFormat" title="http://www.w3.org/ns/dcat#compressFormat">compression format</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#accessService" title="http://www.w3.org/ns/dcat#accessService">data access service</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#endpointDescription" title="http://www.w3.org/ns/dcat#endpointDescription">description of service end-point</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">
+         <span>distribution</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#first" title="http://www.w3.org/ns/dcat#first">first</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#hadRole" title="http://www.w3.org/ns/dcat#hadRole">hadRole</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#broader" title="http://www.w3.org/2004/02/skos/core#broader">has broader</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#broadMatch" title="http://www.w3.org/2004/02/skos/core#broadMatch">has broader match</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#broaderTransitive"
+         title="http://www.w3.org/2004/02/skos/core#broaderTransitive">has broader transitive</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#closeMatch" title="http://www.w3.org/2004/02/skos/core#closeMatch">has close match</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept">
+         <span>has Concept</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData">
+         <span>has Data</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#exactMatch" title="http://www.w3.org/2004/02/skos/core#exactMatch">has exact match</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member">
+         <span>has member</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#member" title="http://www.w3.org/2004/02/skos/core#member">has member</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#memberList" title="http://www.w3.org/2004/02/skos/core#memberList">has member list</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction">
+         <span>has Method Of Instruction</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#narrower" title="http://www.w3.org/2004/02/skos/core#narrower">has narrower</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#narrowMatch" title="http://www.w3.org/2004/02/skos/core#narrowMatch">has narrower match</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#narrowerTransitive"
+         title="http://www.w3.org/2004/02/skos/core#narrowerTransitive">has narrower transitive</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#related" title="http://www.w3.org/2004/02/skos/core#related">has related</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#relatedMatch"
+         title="http://www.w3.org/2004/02/skos/core#relatedMatch">has related match</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#hasTopConcept"
+         title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has top concept</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#hasVersion" title="http://www.w3.org/ns/dcat#hasVersion">has version</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">
+         <span>homepage</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#mappingRelation"
+         title="http://www.w3.org/2004/02/skos/core#mappingRelation">is in mapping relation with</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#semanticRelation"
+         title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#topConceptOf"
+         title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#dataset" title="http://www.w3.org/ns/dcat#dataset">jeu de données</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#packageFormat" title="http://www.w3.org/ns/dcat#packageFormat">packaging format</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#landingPage" title="http://www.w3.org/ns/dcat#landingPage">page d'atterrissage</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#contactPoint" title="http://www.w3.org/ns/dcat#contactPoint">point de contact</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#prev" title="http://www.w3.org/ns/dcat#prev">previous</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#previousVersion" title="http://www.w3.org/ns/dcat#previousVersion">previous version</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/primaryTopic" title="http://xmlns.com/foaf/0.1/primaryTopic">
+         <span>primary Topic</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#qualifiedRelation" title="http://www.w3.org/ns/dcat#qualifiedRelation">qualified relation</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#record" title="http://www.w3.org/ns/dcat#record">registre</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#resource" title="http://www.w3.org/ns/dcat#resource">resource</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#servesDataset" title="http://www.w3.org/ns/dcat#servesDataset">serves dataset</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#service" title="http://www.w3.org/ns/dcat#service">service</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#endpointURL" title="http://www.w3.org/ns/dcat#endpointURL">service end-point</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#themeTaxonomy" title="http://www.w3.org/ns/dcat#themeTaxonomy">taxonomie de thèmes</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#theme" title="http://www.w3.org/ns/dcat#theme">thème</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#mediaType" title="http://www.w3.org/ns/dcat#mediaType">type de média</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#accessURL" title="http://www.w3.org/ns/dcat#accessURL">URL d'accès</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#downloadURL" title="http://www.w3.org/ns/dcat#downloadURL">URL de téléchargement</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#bbox" title="http://www.w3.org/ns/dcat#bbox">bounding box</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#centroid" title="http://www.w3.org/ns/dcat#centroid">centroid</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#endDate" title="http://www.w3.org/ns/dcat#endDate">end date</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#spatialResolutionInMeters"
+         title="http://www.w3.org/ns/dcat#spatialResolutionInMeters">geografisk opløsning (meter)</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#keyword" title="http://www.w3.org/ns/dcat#keyword">mot-clés </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#notation" title="http://www.w3.org/2004/02/skos/core#notation">notation</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#startDate" title="http://www.w3.org/ns/dcat#startDate">start date</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#byteSize" title="http://www.w3.org/ns/dcat#byteSize">taille en octects</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#temporalResolution" title="http://www.w3.org/ns/dcat#temporalResolution">temporal resolution</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#version" title="http://www.w3.org/ns/dcat#version">version</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">alternative label</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#changeNote" title="http://www.w3.org/2004/02/skos/core#changeNote">change note</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition">definition</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#editorialNote"
+         title="http://www.w3.org/2004/02/skos/core#editorialNote">editorial note</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#example" title="http://www.w3.org/2004/02/skos/core#example">example</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/family_name" title="http://xmlns.com/foaf/0.1/family_name">
+         <span>family name</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/givenname" title="http://xmlns.com/foaf/0.1/givenname">
+         <span>givenname</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#hiddenLabel" title="http://www.w3.org/2004/02/skos/core#hiddenLabel">hidden label</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#historyNote" title="http://www.w3.org/2004/02/skos/core#historyNote">history note</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member">
+         <span>member</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#scopeNote" title="http://www.w3.org/2004/02/skos/core#scopeNote">scope note</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/title" title="http://xmlns.com/foaf/0.1/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Individus nomm&eacute;s</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond">
+         <span>amraimond</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher">
+         <span>bbucher</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">
+         <span>geodata paris</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme"
+         title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme">
+         <span>mdvandamme</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Ontologie des jeux de données géospatiales: Description <span class="backlink"> retour au <a href="#toc">sommaire</a></span></h2>
+
+<span class="markdown">Ontology to describe geodatasets in support of knowledge production and transfer</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">R&eacute;ference crois&eacute;e pour Ontologie des jeux de données géospatiales classes, propri&eacute;t&eacute;s et data-propri&eacute;t&eacute;s <span class="backlink"> retour au <a href="#toc">sommaire</a></span></h2>
+Cette section donne les d&eacute;tails de chaque classe et propri&eacute;t&eacute; d&eacute;finie par  Ontologie des jeux de données géospatiales.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/AgentClass" title="http://purl.org/dc/terms/AgentClass"> <span>Agent Class</span> </a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection"> <span>Collection</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem"> <span>Collection Item</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#DatasetSeries" title="http://www.w3.org/ns/dcat#DatasetSeries">Dataset series</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a></li>
+  <li><a href="#http://purl.org/dc/terms/FileFormat" title="http://purl.org/dc/terms/FileFormat"> <span>File Format</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process"> <span>Geodata process</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset"> <span>Geodataset</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series"> <span>Geodataset series</span> </a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a></li>
+  <li><a href="#http://purl.org/dc/terms/Jurisdiction" title="http://purl.org/dc/terms/Jurisdiction"> <span>Jurisdiction</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/LicenseDocument" title="http://purl.org/dc/terms/LicenseDocument"> <span>License Document</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/Location" title="http://purl.org/dc/terms/Location"> <span>Location</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/MediaType" title="http://purl.org/dc/terms/MediaType"> <span>Media Type</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#OrderedCollection" title="http://www.w3.org/2004/02/skos/core#OrderedCollection">Ordered Collection</a></li>
+  <li><a href="#http://purl.org/dc/terms/PeriodOfTime" title="http://purl.org/dc/terms/PeriodOfTime"> <span>Period of Time</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/PhysicalMedium" title="http://purl.org/dc/terms/PhysicalMedium"> <span>Physical Medium</span> </a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#CatalogRecord" title="http://www.w3.org/ns/dcat#CatalogRecord">Registre du catalogue</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#Relationship" title="http://www.w3.org/ns/dcat#Relationship">Relationship</a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation"> <span>Representation</span> </a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#Role" title="http://www.w3.org/ns/dcat#Role">Role</a></li>
+  <li><a href="#http://purl.org/dc/terms/SizeOrDuration" title="http://purl.org/dc/terms/SizeOrDuration"> <span>Size or Duration</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/terms/AgentClass">
+  <h3>Agent Class<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/AgentClass</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2000/01/rdf-schema#Class" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Class">Class</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#Catalog">
+  <h3>Catalogue<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#Catalog</p>
+  <div class="comment">
+   <span class="markdown">Une collection élaborée de métadonnées sur les jeux de données</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Une collection élaborée de métadonnées sur les jeux de données.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Multilingual text not completelly updated. Translations for skos:scopeNote and definitions to doublecheck.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#catalog" title="http://www.w3.org/ns/dcat#catalog">catalog</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#dataset" title="http://www.w3.org/ns/dcat#dataset">jeu de données</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#record" title="http://www.w3.org/ns/dcat#record">registre</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#resource" title="http://www.w3.org/ns/dcat#resource">resource</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#service" title="http://www.w3.org/ns/dcat#service">service</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#themeTaxonomy" title="http://www.w3.org/ns/dcat#themeTaxonomy">taxonomie de thèmes</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#catalog" title="http://www.w3.org/ns/dcat#catalog">catalog</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#Resource">
+  <h3>Catalogued resource<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#Resource</p>
+  <div class="comment">
+   <span class="markdown">Resource published or curated by a single agent.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Resource published or curated by a single agent.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    2020-08-23 Scopenote updated and needs to be translated
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour sous-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process">Geodata process</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#qualifiedRelation" title="http://www.w3.org/ns/dcat#qualifiedRelation">qualified relation</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData">has Data</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#resource" title="http://www.w3.org/ns/dcat#resource">resource</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection">
+  <h3>Collection<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection</p>
+  <div class="comment">
+   <span class="markdown">Collection of items that supports the usage of geodata for a pedagogic or learning purpose, in relationship with given concepts</span>
+  </div>
+  <dl class="description">
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction">has Method Of Instruction</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member">has member</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#Collection">
+  <h3>Collection<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#Collection</p>
+  <div class="comment">
+   <span class="markdown">A meaningful collection of concepts.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour sous-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#OrderedCollection" title="http://www.w3.org/2004/02/skos/core#OrderedCollection">Ordered Collection</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#member" title="http://www.w3.org/2004/02/skos/core#member">has member</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#member" title="http://www.w3.org/2004/02/skos/core#member">has member</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#themeTaxonomy" title="http://www.w3.org/ns/dcat#themeTaxonomy">taxonomie de thèmes</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    est disjoint avec
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem">
+  <h3>Collection Item<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem</p>
+  <div class="comment">
+   <span class="markdown">A collection item is composed of different pieces of data, usually selections from bigger datasets, associated with a proposed visualisation, and narratives that connect the visual items to the concepts of the collection. It has a spatial and temporal extent.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member">has member</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#Concept">
+  <h3>Concept<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#Concept</p>
+  <div class="comment">
+   <span class="markdown">An idea or notion; a unit of thought.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour sous-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Role" title="http://www.w3.org/ns/dcat#Role">Role</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#semanticRelation" title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#topConceptOf" title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept">has Concept</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#member" title="http://www.w3.org/2004/02/skos/core#member">has member</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#hasTopConcept" title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has top concept</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#semanticRelation" title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    est disjoint avec
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+  <h3>Concept Scheme<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#ConceptScheme</p>
+  <div class="comment">
+   <span class="markdown">A set of concepts, optionally including statements about semantic relationships between those concepts.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <dl>
+   <dt>
+    Exemple
+   </dt>
+   <dd>
+    <pre>Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies.</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#hasTopConcept" title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has top concept</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#topConceptOf" title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#themeTaxonomy" title="http://www.w3.org/ns/dcat#themeTaxonomy">taxonomie de thèmes</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    est disjoint avec
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#DataService">
+  <h3>Data service<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#DataService</p>
+  <div class="comment">
+   <span class="markdown">A site or end-point providing operations related to the discovery of, access to, or processing functions on, data or related resources.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A site or end-point providing operations related to the discovery of, access to, or processing functions on, data or related resources.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a> <sup class="type-c" title="classe">c</sup>, <a href="http://purl.org/dc/dcmitype/Service" target="_blank" title="http://purl.org/dc/dcmitype/Service">Service</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#endpointDescription" title="http://www.w3.org/ns/dcat#endpointDescription">description of service end-point</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#servesDataset" title="http://www.w3.org/ns/dcat#servesDataset">serves dataset</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#endpointURL" title="http://www.w3.org/ns/dcat#endpointURL">service end-point</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#accessService" title="http://www.w3.org/ns/dcat#accessService">data access service</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#service" title="http://www.w3.org/ns/dcat#service">service</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#DatasetSeries">
+  <h3>Dataset series<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#DatasetSeries</p>
+  <div class="comment">
+   <span class="markdown">A collection of datasets that are published separately, but share some characteristics that group them.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A collection of datasets that are published separately, but share some common characteristics that groups them.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    2022-05-08 Added to ttl file with annotations in English, Spanish and Italian, except notes that are in other languages too.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour sous-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series">Geodataset series</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#Distribution">
+  <h3>Distribution<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#Distribution</p>
+  <div class="comment">
+   <span class="markdown">Représente une forme spécifique d'un jeu de données. Caque jeu de données peut être disponible sous différentes formes, celles-ci pouvant représenter différents formats du jeu de données ou différents endpoint. Des exemples de distribution sont des fichirs CSV, des API ou des flux RSS.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Représente une forme spécifique d'un jeu de données. Caque jeu de données peut être disponible sous différentes formes, celles-ci pouvant représenter différents formats du jeu de données ou différents endpoint. Des exemples de distribution sont des fichirs CSV, des API ou des flux RSS.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#accessURL" title="http://www.w3.org/ns/dcat#accessURL">URL d'accès</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#downloadURL" title="http://www.w3.org/ns/dcat#downloadURL">URL de téléchargement</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#compressFormat" title="http://www.w3.org/ns/dcat#compressFormat">compression format</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#packageFormat" title="http://www.w3.org/ns/dcat#packageFormat">packaging format</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#byteSize" title="http://www.w3.org/ns/dcat#byteSize">taille en octects</a> <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#http://www.w3.org/ns/dcat#mediaType" title="http://www.w3.org/ns/dcat#mediaType">type de média</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/FileFormat">
+  <h3>File Format<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/FileFormat</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/dc/terms/MediaType" title="http://purl.org/dc/terms/MediaType">Media Type</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process">
+  <h3>Geodata process<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process</p>
+  <div class="comment">
+   <span class="markdown">Process to derive data, that may combine data services but not necessarily</span>
+  </div>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset">
+  <h3>Geodataset<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series">
+  <h3>Geodataset series<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#DatasetSeries" title="http://www.w3.org/ns/dcat#DatasetSeries">Dataset series</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#Dataset">
+  <h3>Jeu de données<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#Dataset</p>
+  <div class="comment">
+   <span class="markdown">Une collection de données, publiée ou élaborée par une seule source, et disponible pour accès ou téléchargement dans un ou plusieurs formats.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Une collection de données, publiée ou élaborée par une seule source, et disponible pour accès ou téléchargement dans un ou plusieurs formats.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    2020-03-16 A new scopenote added and need to be translated
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour sous-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://www.w3.org/ns/dcat#DatasetSeries" title="http://www.w3.org/ns/dcat#DatasetSeries">Dataset series</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset">Geodataset</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution">distribution</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#dataset" title="http://www.w3.org/ns/dcat#dataset">jeu de données</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#servesDataset" title="http://www.w3.org/ns/dcat#servesDataset">serves dataset</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/Jurisdiction">
+  <h3>Jurisdiction<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/Jurisdiction</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/LocationPeriodOrJurisdiction" target="_blank" title="http://purl.org/dc/terms/LocationPeriodOrJurisdiction">Location, Period, or Jurisdiction</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/LicenseDocument">
+  <h3>License Document<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/LicenseDocument</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/RightsStatement" target="_blank" title="http://purl.org/dc/terms/RightsStatement">Rights Statement</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/Location">
+  <h3>Location<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/Location</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/LocationPeriodOrJurisdiction" target="_blank" title="http://purl.org/dc/terms/LocationPeriodOrJurisdiction">Location, Period, or Jurisdiction</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#bbox" title="http://www.w3.org/ns/dcat#bbox">bounding box</a> <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#http://www.w3.org/ns/dcat#centroid" title="http://www.w3.org/ns/dcat#centroid">centroid</a> <sup class="type-dp" title="Propriété de donnée">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/MediaType">
+  <h3>Media Type<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/MediaType</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/MediaTypeOrExtent" target="_blank" title="http://purl.org/dc/terms/MediaTypeOrExtent">Media Type or Extent</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour sous-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/dc/terms/FileFormat" title="http://purl.org/dc/terms/FileFormat">File Format</a> <sup class="type-c" title="classe">c</sup>, <a href="#http://purl.org/dc/terms/PhysicalMedium" title="http://purl.org/dc/terms/PhysicalMedium">Physical Medium</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#compressFormat" title="http://www.w3.org/ns/dcat#compressFormat">compression format</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#packageFormat" title="http://www.w3.org/ns/dcat#packageFormat">packaging format</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#mediaType" title="http://www.w3.org/ns/dcat#mediaType">type de média</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#OrderedCollection">
+  <h3>Ordered Collection<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#OrderedCollection</p>
+  <div class="comment">
+   <span class="markdown">An ordered collection of concepts, where both the grouping and the ordering are meaningful.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#memberList" title="http://www.w3.org/2004/02/skos/core#memberList">has member list</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/PeriodOfTime">
+  <h3>Period of Time<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/PeriodOfTime</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/LocationPeriodOrJurisdiction" target="_blank" title="http://purl.org/dc/terms/LocationPeriodOrJurisdiction">Location, Period, or Jurisdiction</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#endDate" title="http://www.w3.org/ns/dcat#endDate">end date</a> <sup class="type-dp" title="Propriété de donnée">dp</sup>, <a href="#http://www.w3.org/ns/dcat#startDate" title="http://www.w3.org/ns/dcat#startDate">start date</a> <sup class="type-dp" title="Propriété de donnée">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/PhysicalMedium">
+  <h3>Physical Medium<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/PhysicalMedium</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/dc/terms/MediaType" title="http://purl.org/dc/terms/MediaType">Media Type</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#CatalogRecord">
+  <h3>Registre du catalogue<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#CatalogRecord</p>
+  <div class="comment">
+   <span class="markdown">Un registre du catalogue ou une entrée du catalogue, décrivant un seul jeu de données.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Un registre du catalogue ou une entrée du catalogue, décrivant un seul jeu de données.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    English definition updated in this revision. Multilingual text not yet updated except the Spanish one and the Czech one and Italian one.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#record" title="http://www.w3.org/ns/dcat#record">registre</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#Relationship">
+  <h3>Relationship<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#Relationship</p>
+  <div class="comment">
+   <span class="markdown">An association class for attaching additional information to a relationship between DCAT Resources.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">An association class for attaching additional information to a relationship between DCAT Resources.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#hadRole" title="http://www.w3.org/ns/dcat#hadRole">hadRole</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#qualifiedRelation" title="http://www.w3.org/ns/dcat#qualifiedRelation">qualified relation</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation">
+  <h3>Representation<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation</p>
+  <div class="comment">
+   <span class="markdown">Cette classe décrit la représentation d'un concept dans un jeu de données, dans un schéma de données, dans une collection. Elle permet de faire le lien entre des données et des concepts. C'est une classe plutôt qu'une propriété pour permettre de plus facilement lui ajouter des propriétés qui précisent le mode de représentation, par exemple si un jeu ReseauDeMobilité comporte des instances de réseaux de mobilité ou alors représente globalement un réseau de mobilité.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    a pour domaine
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept">has Concept</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData">has Data</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#Role">
+  <h3>Role<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#Role</p>
+  <div class="comment">
+   <span class="markdown">A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Incluída en DCAT para complementar prov:Role (cuyo uso está limitado a roles en el contexto de una actividad, ya que es el rango es prov:hadRole).
+   </dd>
+   <dd>
+    Introdotta in DCAT per completare prov:Role (il cui uso è limitato ai ruoli nel contesto di un'attività, in conseguenza alla definizione del codominio di prov:hadRole).
+   </dd>
+   <dd>
+    Introduced into DCAT to complement prov:Role (whose use is limited to roles in the context of an activity, as the range of prov:hadRole).
+   </dd>
+   <dd>
+    Introduceret i DCAT for at supplere prov:Role (hvis anvendelse er begrænset til roller i forbindelse med en aktivitet, som er rækkevidde for prov:hadRole).
+   </dd>
+   <dd>
+    Přidáno do DCAT pro doplnění třídy prov:Role (jejíž užití je omezeno na role v kontextu aktivit, jakožto obor hodnot vlastnosti prov:hadRole).
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour cible
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/ns/dcat#hadRole" title="http://www.w3.org/ns/dcat#hadRole">hadRole</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/SizeOrDuration">
+  <h3>Size or Duration<sup class="type-c" title="classe">c</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#classes">Retour vers les classes</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/SizeOrDuration</p>
+  <dl class="description">
+   <dt>
+    a pour super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/MediaTypeOrExtent" target="_blank" title="http://purl.org/dc/terms/MediaTypeOrExtent">Media Type or Extent</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h2>Propriétés d'objet</h2>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/ns/dcat#catalog" title="http://www.w3.org/ns/dcat#catalog">catalog</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#compressFormat" title="http://www.w3.org/ns/dcat#compressFormat">compression format</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#accessService" title="http://www.w3.org/ns/dcat#accessService">data access service</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#endpointDescription" title="http://www.w3.org/ns/dcat#endpointDescription">description of service end-point</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#distribution" title="http://www.w3.org/ns/dcat#distribution"> <span>distribution</span> </a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#first" title="http://www.w3.org/ns/dcat#first">first</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#hadRole" title="http://www.w3.org/ns/dcat#hadRole">hadRole</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#broader" title="http://www.w3.org/2004/02/skos/core#broader">has broader</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#broadMatch" title="http://www.w3.org/2004/02/skos/core#broadMatch">has broader match</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#broaderTransitive" title="http://www.w3.org/2004/02/skos/core#broaderTransitive">has broader transitive</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#closeMatch" title="http://www.w3.org/2004/02/skos/core#closeMatch">has close match</a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept"> <span>has Concept</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData"> <span>has Data</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#exactMatch" title="http://www.w3.org/2004/02/skos/core#exactMatch">has exact match</a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member"> <span>has member</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#member" title="http://www.w3.org/2004/02/skos/core#member">has member</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#memberList" title="http://www.w3.org/2004/02/skos/core#memberList">has member list</a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction"> <span>has Method Of Instruction</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#narrower" title="http://www.w3.org/2004/02/skos/core#narrower">has narrower</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#narrowMatch" title="http://www.w3.org/2004/02/skos/core#narrowMatch">has narrower match</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#narrowerTransitive" title="http://www.w3.org/2004/02/skos/core#narrowerTransitive">has narrower transitive</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#related" title="http://www.w3.org/2004/02/skos/core#related">has related</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#relatedMatch" title="http://www.w3.org/2004/02/skos/core#relatedMatch">has related match</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#hasTopConcept" title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has top concept</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#hasVersion" title="http://www.w3.org/ns/dcat#hasVersion">has version</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage"> <span>homepage</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#mappingRelation" title="http://www.w3.org/2004/02/skos/core#mappingRelation">is in mapping relation with</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#semanticRelation" title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#topConceptOf" title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#dataset" title="http://www.w3.org/ns/dcat#dataset">jeu de données</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#packageFormat" title="http://www.w3.org/ns/dcat#packageFormat">packaging format</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#landingPage" title="http://www.w3.org/ns/dcat#landingPage">page d'atterrissage</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#contactPoint" title="http://www.w3.org/ns/dcat#contactPoint">point de contact</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#prev" title="http://www.w3.org/ns/dcat#prev">previous</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#previousVersion" title="http://www.w3.org/ns/dcat#previousVersion">previous version</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/primaryTopic" title="http://xmlns.com/foaf/0.1/primaryTopic"> <span>primary Topic</span> </a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#qualifiedRelation" title="http://www.w3.org/ns/dcat#qualifiedRelation">qualified relation</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#record" title="http://www.w3.org/ns/dcat#record">registre</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#resource" title="http://www.w3.org/ns/dcat#resource">resource</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#servesDataset" title="http://www.w3.org/ns/dcat#servesDataset">serves dataset</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#service" title="http://www.w3.org/ns/dcat#service">service</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#endpointURL" title="http://www.w3.org/ns/dcat#endpointURL">service end-point</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#themeTaxonomy" title="http://www.w3.org/ns/dcat#themeTaxonomy">taxonomie de thèmes</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#theme" title="http://www.w3.org/ns/dcat#theme">thème</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#mediaType" title="http://www.w3.org/ns/dcat#mediaType">type de média</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#accessURL" title="http://www.w3.org/ns/dcat#accessURL">URL d'accès</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#downloadURL" title="http://www.w3.org/ns/dcat#downloadURL">URL de téléchargement</a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/ns/dcat#catalog">
+  <h3>catalog<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#catalog</p>
+  <div class="comment">
+   <span class="markdown">A catalog that is listed in the catalog.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A catalog that is listed in the catalog.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT 3 revision team, translations pending.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#resource" title="http://www.w3.org/ns/dcat#resource">resource</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#compressFormat">
+  <h3>compression format<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#compressFormat</p>
+  <div class="comment">
+   <span class="markdown">The compression format of the distribution in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The compression format of the distribution in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://purl.org/dc/terms/format" target="_blank" title="http://purl.org/dc/terms/format">Format</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/MediaType" title="http://purl.org/dc/terms/MediaType">Media Type</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#accessService">
+  <h3>data access service<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#accessService</p>
+  <div class="comment">
+   <span class="markdown">A site or end-point that gives access to the distribution of the dataset.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A site or end-point that gives access to the distribution of the dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#endpointDescription">
+  <h3>description of service end-point<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#endpointDescription</p>
+  <div class="comment">
+   <span class="markdown">A description of the service end-point, including its operations, parameters etc.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A description of the service end-point, including its operations, parameters etc.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#distribution">
+  <h3>distribution<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#distribution</p>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#first">
+  <h3>first<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#first</p>
+  <div class="comment">
+   <span class="markdown">The first resource in an ordered collection or series of resources, to which the current resource belongs.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The first resource in an ordered collection or series of resources, to which the current resource belongs.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/1999/xhtml/vocab#first" target="_blank" title="http://www.w3.org/1999/xhtml/vocab#first">first</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#hadRole">
+  <h3>hadRole<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#hadRole</p>
+  <div class="comment">
+   <span class="markdown">The function of an entity or agent with respect to another entity or resource.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The function of an entity or agent with respect to another entity or resource.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Agregada en DCAT para complementar prov:hadRole (cuyo uso está limitado a roles en el contexto de una actividad, con dominio prov:Association.
+   </dd>
+   <dd>
+    Introdotta in DCAT per completare prov:hadRole (il cui uso è limitato ai ruoli nel contesto di un'attività, con il dominio di prov:Association.
+   </dd>
+   <dd>
+    Introduced into DCAT to complement prov:hadRole (whose use is limited to roles in the context of an activity, with the domain of prov:Association.
+   </dd>
+   <dd>
+    Introduceret i DCAT for at supplere prov:hadRole (hvis anvendelse er begrænset til roller i forbindelse med en aktivitet med domænet prov:Association).
+   </dd>
+   <dd>
+    Přidáno do DCAT pro doplnění vlastnosti prov:hadRole (jejíž užití je omezeno na role v kontextu aktivity, s definičním oborem prov:Association).
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Relationship" title="http://www.w3.org/ns/dcat#Relationship">Relationship</a> <sup class="type-c" title="classe">c</sup> <span class="logic">or</span> <a href="http://www.w3.org/ns/prov#Attribution" target="_blank" title="http://www.w3.org/ns/prov#Attribution">Attribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Role" title="http://www.w3.org/ns/dcat#Role">Role</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#broader">
+  <h3>has broader<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#broader</p>
+  <div class="comment">
+   <span class="markdown">Broader concepts are typically rendered as parents in a concept hierarchy (tree).</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relates a concept to a concept that is more general in meaning.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broaderTransitive" title="http://www.w3.org/2004/02/skos/core#broaderTransitive">has broader transitive</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broadMatch" title="http://www.w3.org/2004/02/skos/core#broadMatch">has broader match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#narrower" title="http://www.w3.org/2004/02/skos/core#narrower">has narrower</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#broadMatch">
+  <h3>has broader match<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#broadMatch</p>
+  <div class="comment">
+   <span class="markdown">skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broader" title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#mappingRelation" title="http://www.w3.org/2004/02/skos/core#mappingRelation">is in mapping relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#narrowMatch" title="http://www.w3.org/2004/02/skos/core#narrowMatch">has narrower match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#broaderTransitive">
+  <h3>has broader transitive<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#broaderTransitive</p>
+  <div class="comment">
+   <span class="markdown">skos:broaderTransitive is a transitive superproperty of skos:broader.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <p><strong>a pour caractéristiques: </strong> transitive</p>
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#semanticRelation" title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broader" title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#narrowerTransitive" title="http://www.w3.org/2004/02/skos/core#narrowerTransitive">has narrower transitive</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#closeMatch">
+  <h3>has close match<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#closeMatch</p>
+  <div class="comment">
+   <span class="markdown">skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of "compound errors" when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <p><strong>a pour caractéristiques: </strong> symétrique</p>
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#mappingRelation" title="http://www.w3.org/2004/02/skos/core#mappingRelation">is in mapping relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#exactMatch" title="http://www.w3.org/2004/02/skos/core#exactMatch">has exact match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept">
+  <h3>has Concept<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept</p>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation">Representation</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData">
+  <h3>has Data<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData</p>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation">Representation</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#exactMatch">
+  <h3>has exact match<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#exactMatch</p>
+  <div class="comment">
+   <span class="markdown">skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <p><strong>a pour caractéristiques: </strong> symétrique, transitive</p>
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#closeMatch" title="http://www.w3.org/2004/02/skos/core#closeMatch">has close match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member">
+  <h3>has member<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member</p>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection">Collection</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem">Collection Item</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#member">
+  <h3>has member<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#member</p>
+  <div class="comment">
+   <span class="markdown">Relates a collection to one of its members.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a> <sup class="type-c" title="classe">c</sup> <span class="logic">or</span> <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#memberList">
+  <h3>has member list<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#memberList</p>
+  <div class="comment">
+   <span class="markdown">For any resource, every item in the list given as the value of the skos:memberList property is also a value of the skos:member property.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relates an ordered collection to the RDF list containing its members.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <p><strong>a pour caractéristiques: </strong> Fonctionnel</p>
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#OrderedCollection" title="http://www.w3.org/2004/02/skos/core#OrderedCollection">Ordered Collection</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">List</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction">
+  <h3>has Method Of Instruction<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction</p>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection">Collection</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://purl.org/dc/terms/MethodOfInstruction" target="_blank" title="http://purl.org/dc/terms/MethodOfInstruction">Method of Instruction</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#narrower">
+  <h3>has narrower<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#narrower</p>
+  <div class="comment">
+   <span class="markdown">Narrower concepts are typically rendered as children in a concept hierarchy (tree).</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relates a concept to a concept that is more specific in meaning.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#narrowerTransitive" title="http://www.w3.org/2004/02/skos/core#narrowerTransitive">has narrower transitive</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#narrowMatch" title="http://www.w3.org/2004/02/skos/core#narrowMatch">has narrower match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broader" title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#narrowMatch">
+  <h3>has narrower match<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#narrowMatch</p>
+  <div class="comment">
+   <span class="markdown">skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#narrower" title="http://www.w3.org/2004/02/skos/core#narrower">has narrower</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#mappingRelation" title="http://www.w3.org/2004/02/skos/core#mappingRelation">is in mapping relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broadMatch" title="http://www.w3.org/2004/02/skos/core#broadMatch">has broader match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#narrowerTransitive">
+  <h3>has narrower transitive<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#narrowerTransitive</p>
+  <div class="comment">
+   <span class="markdown">skos:narrowerTransitive is a transitive superproperty of skos:narrower.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <p><strong>a pour caractéristiques: </strong> transitive</p>
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#semanticRelation" title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#narrower" title="http://www.w3.org/2004/02/skos/core#narrower">has narrower</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broaderTransitive" title="http://www.w3.org/2004/02/skos/core#broaderTransitive">has broader transitive</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#related">
+  <h3>has related<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#related</p>
+  <div class="comment">
+   <span class="markdown">skos:related is disjoint with skos:broaderTransitive</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relates a concept to a concept with which there is an associative semantic relationship.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <p><strong>a pour caractéristiques: </strong> symétrique</p>
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#semanticRelation" title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#relatedMatch" title="http://www.w3.org/2004/02/skos/core#relatedMatch">has related match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#relatedMatch">
+  <h3>has related match<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#relatedMatch</p>
+  <div class="comment">
+   <span class="markdown">skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <p><strong>a pour caractéristiques: </strong> symétrique</p>
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#related" title="http://www.w3.org/2004/02/skos/core#related">has related</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#mappingRelation" title="http://www.w3.org/2004/02/skos/core#mappingRelation">is in mapping relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+  <h3>has top concept<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#hasTopConcept</p>
+  <div class="comment">
+   <span class="markdown">Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#topConceptOf" title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#hasVersion">
+  <h3>has version<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#hasVersion</p>
+  <div class="comment">
+   <span class="markdown">This resource has a more specific, versioned resource [PAV].</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">This resource has a more specific, versioned resource [PAV].</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://purl.org/dc/terms/hasVersion" target="_blank" title="http://purl.org/dc/terms/hasVersion">Has Version</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="http://www.w3.org/ns/prov#generalizationOf" target="_blank" title="http://www.w3.org/ns/prov#generalizationOf">generalization Of</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/homepage">
+  <h3>homepage<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/homepage</p>
+  <div class="comment">
+   <span class="markdown">This axiom needed so that Protege loads DCAT 3 without errors.</span>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#mappingRelation">
+  <h3>is in mapping relation with<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#mappingRelation</p>
+  <div class="comment">
+   <span class="markdown">These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relates two concepts coming, by convention, from different schemes, and that have comparable meanings</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#semanticRelation" title="http://www.w3.org/2004/02/skos/core#semanticRelation">is in semantic relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broadMatch" title="http://www.w3.org/2004/02/skos/core#broadMatch">has broader match</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#closeMatch" title="http://www.w3.org/2004/02/skos/core#closeMatch">has close match</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#narrowMatch" title="http://www.w3.org/2004/02/skos/core#narrowMatch">has narrower match</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#relatedMatch" title="http://www.w3.org/2004/02/skos/core#relatedMatch">has related match</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#inScheme">
+  <h3>is in scheme<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#inScheme</p>
+  <div class="comment">
+   <span class="markdown">Relates a resource (for example a concept) to a concept scheme in which it is included.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#topConceptOf" title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#semanticRelation">
+  <h3>is in semantic relation with<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#semanticRelation</p>
+  <div class="comment">
+   <span class="markdown">Links a concept to a concept related by meaning.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#broaderTransitive" title="http://www.w3.org/2004/02/skos/core#broaderTransitive">has broader transitive</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#narrowerTransitive" title="http://www.w3.org/2004/02/skos/core#narrowerTransitive">has narrower transitive</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#related" title="http://www.w3.org/2004/02/skos/core#related">has related</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/2004/02/skos/core#mappingRelation" title="http://www.w3.org/2004/02/skos/core#mappingRelation">is in mapping relation with</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#topConceptOf">
+  <h3>is top concept in scheme<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#topConceptOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a concept to the concept scheme that it is a top level concept of.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     est inverse de
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#hasTopConcept" title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has top concept</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#dataset">
+  <h3>jeu de données<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#dataset</p>
+  <div class="comment">
+   <span class="markdown">Relie un catalogue à un jeu de données faisant partie de ce catalogue.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relie un catalogue à un jeu de données faisant partie de ce catalogue.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT 3 revision team, translations pending.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#resource" title="http://www.w3.org/ns/dcat#resource">resource</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#packageFormat">
+  <h3>packaging format<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#packageFormat</p>
+  <div class="comment">
+   <span class="markdown">The package format of the distribution in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The package format of the distribution in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://purl.org/dc/terms/format" target="_blank" title="http://purl.org/dc/terms/format">Format</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/MediaType" title="http://purl.org/dc/terms/MediaType">Media Type</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#landingPage">
+  <h3>page d'atterrissage<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#landingPage</p>
+  <div class="comment">
+   <span class="markdown">Une page Web accessible par un navigateur Web donnant accès au catalogue, un jeu de données, ses distributions et/ou des informations additionnelles.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Une page Web accessible par un navigateur Web donnant accès au catalogue, un jeu de données, ses distributions et/ou des informations additionnelles.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://xmlns.com/foaf/0.1/page" target="_blank" title="http://xmlns.com/foaf/0.1/page">page</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://xmlns.com/foaf/0.1/Document" target="_blank" title="http://xmlns.com/foaf/0.1/Document">Document</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#contactPoint">
+  <h3>point de contact<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#contactPoint</p>
+  <div class="comment">
+   <span class="markdown">Relie un jeu de données à une information de contact utile en utilisant VCard.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relie un jeu de données à une information de contact utile en utilisant VCard.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT revision team, Italian, Spanish and Czech translations provided, other translations pending.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2006/vcard/ns#Kind" target="_blank" title="http://www.w3.org/2006/vcard/ns#Kind">Kind</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#prev">
+  <h3>previous<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#prev</p>
+  <div class="comment">
+   <span class="markdown">The previous resource (before the current one) in an ordered collection or series of resources.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The previous resource (before the current one) in an ordered collection or series of resources.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/1999/xhtml/vocab#prev" target="_blank" title="http://www.w3.org/1999/xhtml/vocab#prev">prev</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#previousVersion">
+  <h3>previous version<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#previousVersion</p>
+  <div class="comment">
+   <span class="markdown">The previous version of a resource in a lineage [PAV].</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The previous version of a resource in a lineage [PAV].</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/ns/prov#wasRevisionOf" target="_blank" title="http://www.w3.org/ns/prov#wasRevisionOf">was Revision Of</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/primaryTopic">
+  <h3>primary Topic<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/primaryTopic</p>
+  <div class="comment">
+   <span class="markdown">This axiom needed so that Protege loads DCAT 3 without errors.</span>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#qualifiedRelation">
+  <h3>qualified relation<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#qualifiedRelation</p>
+  <div class="comment">
+   <span class="markdown">Link to a description of a relationship with another resource.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Link to a description of a relationship with another resource.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Introdotta in DCAT per integrare le altre relazioni qualificate di PROV.
+   </dd>
+   <dd>
+    Introduced into DCAT to complement the other PROV qualified relations.
+   </dd>
+   <dd>
+    Introduceret i DCAT med henblik på at supplere de øvrige kvalificerede relationer fra PROV.
+   </dd>
+   <dd>
+    Přidáno do DCAT k doplnění jiných kvalifikovaných vztahů ze slovníku PROV.
+   </dd>
+   <dd>
+    Se incluyó en DCAT para complementar las relaciones calificadas disponibles en PROV.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Relationship" title="http://www.w3.org/ns/dcat#Relationship">Relationship</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#record">
+  <h3>registre<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#record</p>
+  <div class="comment">
+   <span class="markdown">Relie un catalogue à ses registres.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relie un catalogue à ses registres.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English, Italian, Spanish and Czech Definitions modified by DCAT revision team, other translations pending.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#CatalogRecord" title="http://www.w3.org/ns/dcat#CatalogRecord">Registre du catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#resource">
+  <h3>resource<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#resource</p>
+  <div class="comment">
+   <span class="markdown">A resource that is listed in the catalog.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A resource that is listed in the catalog.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT 3 revision team, translations pending.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://purl.org/dc/terms/hasPart" target="_blank" title="http://purl.org/dc/terms/hasPart">Has Part</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#catalog" title="http://www.w3.org/ns/dcat#catalog">catalog</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#dataset" title="http://www.w3.org/ns/dcat#dataset">jeu de données</a> <sup class="type-op" title="Propriété d'objet">op</sup>, <a href="#http://www.w3.org/ns/dcat#service" title="http://www.w3.org/ns/dcat#service">service</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Resource" title="http://www.w3.org/ns/dcat#Resource">Catalogued resource</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#servesDataset">
+  <h3>serves dataset<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#servesDataset</p>
+  <div class="comment">
+   <span class="markdown">A collection of data that this DataService can distribute.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A collection of data that this DataService can distribute.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Dataset" title="http://www.w3.org/ns/dcat#Dataset">Jeu de données</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#service">
+  <h3>service<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#service</p>
+  <div class="comment">
+   <span class="markdown">A service that is listed in the catalog.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A service that is listed in the catalog.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT 3 revision team, translations pending.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#resource" title="http://www.w3.org/ns/dcat#resource">resource</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#endpointURL">
+  <h3>service end-point<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#endpointURL</p>
+  <div class="comment">
+   <span class="markdown">The root location or primary endpoint of the service (a web-resolvable IRI).</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The root location or primary endpoint of the service (a web-resolvable IRI).</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">Data service</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Resource" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#themeTaxonomy">
+  <h3>taxonomie de thèmes<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#themeTaxonomy</p>
+  <div class="comment">
+   <span class="markdown">Le systhème d'ogranisation de connaissances utilisé pour classifier les jeux de données du catalogue.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Le systhème d'ogranisation de connaissances utilisé pour classifier les jeux de données du catalogue.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Catalog" title="http://www.w3.org/ns/dcat#Catalog">Catalogue</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Resource" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+    </dd>
+    <dt>
+     cible comprend
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#Ontology" target="_blank" title="http://www.w3.org/2002/07/owl#Ontology">Ontology</a> <sup class="type-ep" title>ep</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#Collection" title="http://www.w3.org/2004/02/skos/core#Collection">Collection</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#theme">
+  <h3>thème<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#theme</p>
+  <div class="comment">
+   <span class="markdown">La catégorie principale de la ressource. Une ressource peut avoir plusieurs thèmes.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">La catégorie principale de la ressource. Une ressource peut avoir plusieurs thèmes.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT revision team, all except for Italian and Czech translations are pending. Scope note has changed and its translations should be updated
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://purl.org/dc/terms/subject" target="_blank" title="http://purl.org/dc/terms/subject">Subject</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#mediaType">
+  <h3>type de média<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#mediaType</p>
+  <div class="comment">
+   <span class="markdown">Cette propriété doit être utilisée quand c'est définit le type de média de la distribution en IANA, sinon dcterms:format DOIT être utilisé avec différentes valeurs.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Cette propriété doit être utilisée quand c'est définit le type de média de la distribution en IANA, sinon dcterms:format DOIT être utilisé avec différentes valeurs.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT revision team, Italian and Czech translation provided, other translations pending. Note some inconsistency on def vs. usage.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://purl.org/dc/terms/format" target="_blank" title="http://purl.org/dc/terms/format">Format</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/MediaType" title="http://purl.org/dc/terms/MediaType">Media Type</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#accessURL">
+  <h3>URL d'accès<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#accessURL</p>
+  <div class="comment">
+   <span class="markdown">Ceci peut être tout type d'URL qui donne accès à une distribution du jeu de données. Par exemple, un lien à une page HTML contenant un lien au jeu de données, un Flux RSS, un point d'accès SPARQL. Utilisez le lorsque votre catalogue ne contient pas d'information sur quoi il est ou quand ce n'est pas téléchargeable.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Ceci peut être tout type d'URL qui donne accès à une distribution du jeu de données. Par exemple, un lien à une page HTML contenant un lien au jeu de données, un Flux RSS, un point d'accès SPARQL. Utilisez le lorsque votre catalogue ne contient pas d'information sur quoi il est ou quand ce n'est pas téléchargeable.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT revision team, updated Italian and Czech translation provided, translations for other languages pending.
+   </dd>
+   <dd>
+    rdfs:label, rdfs:comment and skos:scopeNote have been modified. Non-english versions except for Italian must be updated.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Resource" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#accessService" title="http://www.w3.org/ns/dcat#accessService">data access service</a> <sup class="type-op" title="Propriété d'objet">op</sup> <span class="logic">o</span> <a href="#http://www.w3.org/ns/dcat#endpointURL" title="http://www.w3.org/ns/dcat#endpointURL">service end-point</a> <sup class="type-op" title="Propriété d'objet">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#downloadURL">
+  <h3>URL de téléchargement<sup class="type-op" title="Propriété d'objet">op</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#objectproperties">Retour vers les propriétés d'objet</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#downloadURL</p>
+  <div class="comment">
+   <span class="markdown">Ceci est un lien direct à un fichier téléchargeable en un format donnée. Exple fichier CSV ou RDF. Le format est décrit par les propriétés de distribution dcterms:format et/ou dcat:mediaType.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Ceci est un lien direct à un fichier téléchargeable en un format donnée. Exple fichier CSV ou RDF. Le format est décrit par les propriétés de distribution dcterms:format et/ou dcat:mediaType.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Status: English Definition text modified by DCAT revision team, Italian, Spanish and Czech translation updated, other translations pending.
+   </dd>
+   <dd>
+    rdfs:label, rdfs:comment and/or skos:scopeNote have been modified. Non-english versions must be updated.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Resource" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h2>Propriétés de donnée</h2>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/ns/dcat#bbox" title="http://www.w3.org/ns/dcat#bbox">bounding box</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#centroid" title="http://www.w3.org/ns/dcat#centroid">centroid</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#endDate" title="http://www.w3.org/ns/dcat#endDate">end date</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#spatialResolutionInMeters" title="http://www.w3.org/ns/dcat#spatialResolutionInMeters">geografisk opløsning (meter)</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#keyword" title="http://www.w3.org/ns/dcat#keyword">mot-clés </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#notation" title="http://www.w3.org/2004/02/skos/core#notation">notation</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#startDate" title="http://www.w3.org/ns/dcat#startDate">start date</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#byteSize" title="http://www.w3.org/ns/dcat#byteSize">taille en octects</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#temporalResolution" title="http://www.w3.org/ns/dcat#temporalResolution">temporal resolution</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#version" title="http://www.w3.org/ns/dcat#version">version</a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/ns/dcat#bbox">
+  <h3>bounding box<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#bbox</p>
+  <div class="comment">
+   <span class="markdown">The geographic bounding box of a spatial thing [SDW-BP].</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The geographic bounding box of a spatial thing [SDW-BP].</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    English language definitions and comments updated in this revision in line with ED. Multilingual text unevenly updated.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/Location" title="http://purl.org/dc/terms/Location">Location</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#centroid">
+  <h3>centroid<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#centroid</p>
+  <div class="comment">
+   <span class="markdown">The geographic center (centroid) of a spatial thing [SDW-BP].</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The geographic center (centroid) of a spatial thing [SDW-BP].</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    English language definitions and comments updated in this revision in line with ED. Multilingual text unevenly updated.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/Location" title="http://purl.org/dc/terms/Location">Location</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#endDate">
+  <h3>end date<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#endDate</p>
+  <div class="comment">
+   <span class="markdown">The end of the period.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The end of the period.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/PeriodOfTime" title="http://purl.org/dc/terms/PeriodOfTime">Period of Time</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#spatialResolutionInMeters">
+  <h3>geografisk opløsning (meter)<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#spatialResolutionInMeters</p>
+  <div class="comment">
+   <span class="markdown">mindste geografiske afstand som kan erkendes i et datasæt, målt i meter.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">mindste geografiske afstand som kan resolveres i et datasæt, målt i meter.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Kan optræde i forbindelse med beskrivelse af datasættet eller datasætditributionen, så der er ikke angivet et domæne for egenskaben.
+   </dd>
+   <dd>
+    Might appear in the description of a Dataset or a Distribution, so no domain is specified.
+   </dd>
+   <dd>
+    Může se vyskytnout v popisu Datové sady nebo Distribuce, takže nebyl specifikován definiční obor.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#keyword">
+  <h3>mot-clés <sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#keyword</p>
+  <div class="comment">
+   <span class="markdown">Un mot-clé ou étiquette décrivant une ressource.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Un mot-clé ou étiquette décrivant une ressource.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#notation">
+  <h3>notation<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#notation</p>
+  <div class="comment">
+   <span class="markdown">A notation, also known as classification code, is a string of characters such as "T58.5" or "303.4833" used to uniquely identify a concept within the scope of a given concept scheme.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#startDate">
+  <h3>start date<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#startDate</p>
+  <div class="comment">
+   <span class="markdown">The start of the period</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/PeriodOfTime" title="http://purl.org/dc/terms/PeriodOfTime">Period of Time</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#byteSize">
+  <h3>taille en octects<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#byteSize</p>
+  <div class="comment">
+   <span class="markdown">La taille de la distribution en octects</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">La taille de la distribution en octects.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/TR/vocab-dcat/">http://www.w3.org/TR/vocab-dcat/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour domaine
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/ns/dcat#Distribution" title="http://www.w3.org/ns/dcat#Distribution">Distribution</a> <sup class="type-c" title="classe">c</sup>
+    </dd>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#temporalResolution">
+  <h3>temporal resolution<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#temporalResolution</p>
+  <div class="comment">
+   <span class="markdown">minimum time period resolvable in a dataset.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">minimum time period resolvable in a dataset.</span>
+  </div>
+  <dl>
+   <dt>
+    note éditoriale
+   </dt>
+   <dd>
+    Kan optræde i forbindelse med beskrivelse af datasættet eller datasætditributionen, så der er ikke angivet et domæne for egenskaben.
+   </dd>
+   <dd>
+    Might appear in the description of a Dataset or a Distribution, so no domain is specified.
+   </dd>
+   <dd>
+    Může se vyskytnout v popisu Datové sady nebo Distribuce, takže nebyl specifikován definiční obor.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-2/">https://www.w3.org/TR/vocab-dcat-2/</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour cible
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#duration" target="_blank" title="http://www.w3.org/2001/XMLSchema#duration">duration</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#version">
+  <h3>version<sup class="type-dp" title="Propriété de donnée">dp</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#dataproperties">Retour vers les propriétés de données</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#version</p>
+  <div class="comment">
+   <span class="markdown">The version indicator (name or identifier) of a resource.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The version indicator (name or identifier) of a resource.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h2>Annotation de propriétés</h2>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">alternative label</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#changeNote" title="http://www.w3.org/2004/02/skos/core#changeNote">change note</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition">definition</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#editorialNote" title="http://www.w3.org/2004/02/skos/core#editorialNote">editorial note</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#example" title="http://www.w3.org/2004/02/skos/core#example">example</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/family_name" title="http://xmlns.com/foaf/0.1/family_name"> <span>family name</span> </a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/givenname" title="http://xmlns.com/foaf/0.1/givenname"> <span>givenname</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#hiddenLabel" title="http://www.w3.org/2004/02/skos/core#hiddenLabel">hidden label</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#historyNote" title="http://www.w3.org/2004/02/skos/core#historyNote">history note</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member"> <span>member</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#scopeNote" title="http://www.w3.org/2004/02/skos/core#scopeNote">scope note</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/title" title="http://xmlns.com/foaf/0.1/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#altLabel">
+  <h3>alternative label<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#altLabel</p>
+  <div class="comment">
+   <span class="markdown">The range of skos:altLabel is the class of RDF plain literals.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">An alternative lexical label for a resource.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <dl>
+   <dt>
+    Exemple
+   </dt>
+   <dd>
+    <pre>Acronyms, abbreviations, spelling variants, and irregular plural/singular forms may be included among the alternative labels for a concept. Mis-spelled terms are normally included as hidden labels (see skos:hiddenLabel).</pre>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#label" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#changeNote">
+  <h3>change note<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#changeNote</p>
+  <div class="comment">
+   <span class="markdown">A note about a modification to a concept.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#definition">
+  <h3>definition<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#definition</p>
+  <div class="comment">
+   <span class="markdown">A statement or formal explanation of the meaning of a concept.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#editorialNote">
+  <h3>editorial note<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#editorialNote</p>
+  <div class="comment">
+   <span class="markdown">A note for an editor, translator or maintainer of the vocabulary.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#example">
+  <h3>example<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#example</p>
+  <div class="comment">
+   <span class="markdown">An example of the use of a concept.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/family_name">
+  <h3>family name<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/family_name</p>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/givenname">
+  <h3>givenname<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/givenname</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#hiddenLabel">
+  <h3>hidden label<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#hiddenLabel</p>
+  <div class="comment">
+   <span class="markdown">The range of skos:hiddenLabel is the class of RDF plain literals.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#label" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#historyNote">
+  <h3>history note<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#historyNote</p>
+  <div class="comment">
+   <span class="markdown">A note about the past state/use/meaning of a concept.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/member">
+  <h3>member<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/member</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#note">
+  <h3>note<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#note</p>
+  <div class="comment">
+   <span class="markdown">A general note, for any purpose.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour sous-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#changeNote" title="http://www.w3.org/2004/02/skos/core#changeNote">change note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>, <a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>, <a href="#http://www.w3.org/2004/02/skos/core#editorialNote" title="http://www.w3.org/2004/02/skos/core#editorialNote">editorial note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>, <a href="#http://www.w3.org/2004/02/skos/core#example" title="http://www.w3.org/2004/02/skos/core#example">example</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>, <a href="#http://www.w3.org/2004/02/skos/core#historyNote" title="http://www.w3.org/2004/02/skos/core#historyNote">history note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>, <a href="#http://www.w3.org/2004/02/skos/core#scopeNote" title="http://www.w3.org/2004/02/skos/core#scopeNote">scope note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#prefLabel">
+  <h3>preferred label<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#prefLabel</p>
+  <div class="comment">
+   <span class="markdown">A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">The preferred lexical label for a resource, in a given language.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#label" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#label">label</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#scopeNote">
+  <h3>scope note<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#scopeNote</p>
+  <div class="comment">
+   <span class="markdown">A note that helps to clarify the meaning and/or the use of a concept.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Est défini par
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     a pour super-propriétés
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2004/02/skos/core#note" title="http://www.w3.org/2004/02/skos/core#note">note</a> <sup class="type-ap" title="Annotation de propriété">ap</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/title">
+  <h3>title<sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#annotationproperties">Retour vers les annotations de propriétés</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/title</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h2>Individus nommés</h2>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond"> <span>amraimond</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher"> <span>bbucher</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"> <span>geodata paris</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme"> <span>mdvandamme</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond">
+  <h3>amraimond<sup class="type-ni" title="Individu nommé">ni</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#namedindividuals">Retour vers l'individu nommé</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond</p>
+  <dl class="description">
+   <dt>
+    appartient à
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Agent" target="_blank" title="http://www.w3.org/ns/prov#Agent">Agent</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Person" target="_blank" title="http://www.w3.org/ns/prov#Person">Person</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/Person" target="_blank" title="http://xmlns.com/foaf/0.1/Person">Person</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour assertions
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#actedOnBehalfOf" target="_blank" title="http://www.w3.org/ns/prov#actedOnBehalfOf">acted On Behalf Of</a> <sup class="type-op" title="Propriété d'objet">op</sup> <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">geodata paris</a> <sup class="type-ni" title="Individu nommé">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/family_name" target="_blank" title="http://xmlns.com/foaf/0.1/family_name">family name</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Olteanu-Raimond"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/givenname" target="_blank" title="http://xmlns.com/foaf/0.1/givenname">givenname</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Ana-Maria"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/member" target="_blank" title="http://xmlns.com/foaf/0.1/member">member</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">geodata paris</a> <sup class="type-ni" title="Individu nommé">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/name" target="_blank" title="http://xmlns.com/foaf/0.1/name">name</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Ana-Maria Olteanu-Raimond"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/title" target="_blank" title="http://xmlns.com/foaf/0.1/title">title</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Mme."</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher">
+  <h3>bbucher<sup class="type-ni" title="Individu nommé">ni</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#namedindividuals">Retour vers l'individu nommé</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher</p>
+  <dl class="description">
+   <dt>
+    appartient à
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Agent" target="_blank" title="http://www.w3.org/ns/prov#Agent">Agent</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Person" target="_blank" title="http://www.w3.org/ns/prov#Person">Person</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/Person" target="_blank" title="http://xmlns.com/foaf/0.1/Person">Person</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour assertions
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#actedOnBehalfOf" target="_blank" title="http://www.w3.org/ns/prov#actedOnBehalfOf">acted On Behalf Of</a> <sup class="type-op" title="Propriété d'objet">op</sup> <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">geodata paris</a> <sup class="type-ni" title="Individu nommé">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/family_name" target="_blank" title="http://xmlns.com/foaf/0.1/family_name">family name</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Bucher"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/givenname" target="_blank" title="http://xmlns.com/foaf/0.1/givenname">givenname</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Bénédicte"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/member" target="_blank" title="http://xmlns.com/foaf/0.1/member">member</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">geodata paris</a> <sup class="type-ni" title="Individu nommé">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/name" target="_blank" title="http://xmlns.com/foaf/0.1/name">name</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Bénédicte Bucher"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/title" target="_blank" title="http://xmlns.com/foaf/0.1/title">title</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Mme."</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">
+  <h3>geodata paris<sup class="type-ni" title="Individu nommé">ni</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#namedindividuals">Retour vers l'individu nommé</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris</p>
+  <dl class="description">
+   <dt>
+    appartient à
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Agent" target="_blank" title="http://www.w3.org/ns/prov#Agent">Agent</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Organization" target="_blank" title="http://www.w3.org/ns/prov#Organization">Organization</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/Organization" target="_blank" title="http://xmlns.com/foaf/0.1/Organization">Organization</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour assertions
+   </dt>
+   <dd>
+    <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a> <sup class="type-op" title="Propriété d'objet">op</sup> <a href="https://geodata-paris.fr" target="_blank" title="https://geodata-paris.fr">https://geodata-paris.fr</a> <sup class="type-ni" title="Individu nommé">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/name" target="_blank" title="http://xmlns.com/foaf/0.1/name">name</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Géodata Paris"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme">
+  <h3>mdvandamme<sup class="type-ni" title="Individu nommé">ni</sup> <span class="backlink"> Retour à <a href="#toc">Table des matières</a> ou <a href="#namedindividuals">Retour vers l'individu nommé</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme</p>
+  <dl class="description">
+   <dt>
+    appartient à
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Agent" target="_blank" title="http://www.w3.org/ns/prov#Agent">Agent</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Person" target="_blank" title="http://www.w3.org/ns/prov#Person">Person</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/Person" target="_blank" title="http://xmlns.com/foaf/0.1/Person">Person</a> <sup class="type-c" title="classe">c</sup>
+   </dd>
+   <dt>
+    a pour assertions
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#actedOnBehalfOf" target="_blank" title="http://www.w3.org/ns/prov#actedOnBehalfOf">acted On Behalf Of</a> <sup class="type-op" title="Propriété d'objet">op</sup> <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">geodata paris</a> <sup class="type-ni" title="Individu nommé">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/family_name" target="_blank" title="http://xmlns.com/foaf/0.1/family_name">family name</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Van Damme"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/givenname" target="_blank" title="http://xmlns.com/foaf/0.1/givenname">givenname</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Marie-Dominique"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/member" target="_blank" title="http://xmlns.com/foaf/0.1/member">member</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <a href="#http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris" title="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">geodata paris</a> <sup class="type-ni" title="Individu nommé">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/name" target="_blank" title="http://xmlns.com/foaf/0.1/name">name</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Marie-Dominique Van Damme"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/title" target="_blank" title="http://xmlns.com/foaf/0.1/title">title</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"Mme."</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/workInfoHomepage" target="_blank" title="http://xmlns.com/foaf/0.1/workInfoHomepage">work Info Homepage</a> <sup class="type-ap" title="Annotation de propriété">ap</sup> <span class="literal">"https://www.umr-lastig.fr/mdvandamme/"</span>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>L&eacute;gende <span class="backlink"> Retour <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Individus nomm&eacute;s">ni</sup>: Individus nomm&eacute;s <br/>
+<sup class="type-ep" title="null">ep</sup>: null
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">R&eacute;f&eacute;rences <span class="backlink"> retour au <a href="#toc">sommaire</a></span></h2>
+<span class="markdown">
+Ajoutez vos r&eacute;f&eacute;rences ici. Il est recommand&eacute; de les avoir sous forme de liste.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Remerciements <span class="backlink"> retour au <a href="#toc">sommaire</a></span></h2>
+<p>
+Les auteurs voudraient remercier <a href="http://www.essepuntato.it/">Silvio Peroni</a> pour le d&eacute;veloppement de <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, qui est utilis&eacute; pour repr&eacute;senter les sections de R&eacute;f&eacute;rencement crois&eacute; dans ce document, et <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> pour le d&eacute;veloppement de <a href="https://github.com/dgarijo/Widoco">Widoco</a>, le programme utilis&eacute; pour cr&eacute;er le template de cette documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
