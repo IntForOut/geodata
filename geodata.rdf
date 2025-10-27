@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:org="http://www.w3.org/ns/org#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:pav="http://purl.org/pav/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:bibo="http://purl.org/ontology/bibo/"
+	xmlns:core="http://purl.org/vocab/frbr/core#"
+	xmlns:dcam="http://purl.org/dc/dcam/"
+	xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:prov="http://www.w3.org/ns/prov#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:vann="http://purl.org/vocab/vann/"
+	xmlns:terms="http://purl.org/dc/terms/"
+	xmlns:vocab="http://www.w3.org/1999/xhtml/vocab#"
+	xmlns:schema="http://schema.org/">
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	<owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+	<owl:imports rdf:resource="http://www.w3.org/ns/dcat3"/>
+	<owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
+	<rdfs:comment>Ontology to describe geodatasets in support of knowledge production and transfer</rdfs:comment>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Annotation properties -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://xmlns.com/foaf/0.1/family_name -->
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/family_name">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://xmlns.com/foaf/0.1/givenname -->
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/givenname">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://xmlns.com/foaf/0.1/member -->
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+<!--  -->
+<!-- http://xmlns.com/foaf/0.1/title -->
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/title">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Datatypes -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://purl.org/dc/terms/Box -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/Box">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- http://purl.org/dc/terms/ISO3166 -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/ISO3166">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- http://purl.org/dc/terms/ISO639-2 -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/ISO639-2">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- http://purl.org/dc/terms/ISO639-3 -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/ISO639-3">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- http://purl.org/dc/terms/Period -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/Period">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- http://purl.org/dc/terms/Point -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/Point">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- http://purl.org/dc/terms/RFC1766 -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/RFC1766">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- http://purl.org/dc/terms/RFC3066 -->
+
+<rdf:Description rdf:about="http://purl.org/dc/terms/RFC3066">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!-- xsd:date -->
+
+<rdf:Description rdf:about="xsd:date">
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Object Properties -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasConcept">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasData">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation"/>
+	<rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#hasMethodOfInstruction">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection"/>
+	<rdfs:range rdf:resource="http://purl.org/dc/terms/MethodOfInstruction"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#has_member">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection"/>
+	<rdfs:range rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Classes -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Collection">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:comment>Collection of items that supports the usage of geodata for a pedagogic or learning purpose, in relationship with given concepts</rdfs:comment>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#CollectionItem">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:comment>A collection item is composed of different pieces of data, usually selections from bigger datasets, associated with a proposed visualisation, and narratives that connect the visual items to the concepts of the collection. It has a spatial and temporal extent.</rdfs:comment>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodata_process">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
+	<rdfs:comment>Process to derive data, that may combine data services but not necessarily</rdfs:comment>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Geodataset_series">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#DatasetSeries"/>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#Representation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:comment>Cette classe décrit la représentation d'un concept dans un jeu de données, dans un schéma de données, dans une collection. Elle permet de faire le lien entre des données et des concepts. C'est une classe plutôt qu'une propriété pour permettre de plus facilement lui ajouter des propriétés qui précisent le mode de représentation, par exemple si un jeu ReseauDeMobilité comporte des instances de réseaux de mobilité ou alors représente globalement un réseau de mobilité.</rdfs:comment>
+</rdf:Description>
+<!--  -->
+<!-- http://xmlns.com/foaf/0.1/Organization -->
+
+<rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ################################################################# -->
+<!-- # -->
+<!-- #    Individuals -->
+<!-- # -->
+<!-- ################################################################# -->
+<!--  -->
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#amraimond">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<prov:actedOnBehalfOf rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"/>
+	<foaf:family_name>Olteanu-Raimond</foaf:family_name>
+	<foaf:givenname>Ana-Maria</foaf:givenname>
+	<foaf:member rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"/>
+	<foaf:name>Ana-Maria Olteanu-Raimond</foaf:name>
+	<foaf:title>Mme.</foaf:title>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#bbucher">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<prov:actedOnBehalfOf rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"/>
+	<foaf:family_name>Bucher</foaf:family_name>
+	<foaf:givenname>Bénédicte</foaf:givenname>
+	<foaf:member rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"/>
+	<foaf:name>Bénédicte Bucher</foaf:name>
+	<foaf:title>Mme.</foaf:title>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+	<foaf:homepage rdf:resource="https://geodata-paris.fr"/>
+	<foaf:name>Géodata Paris</foaf:name>
+</rdf:Description>
+<!--  -->
+<!-- http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme -->
+
+<rdf:Description rdf:about="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#mdvandamme">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+	<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+	<prov:actedOnBehalfOf rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"/>
+	<foaf:family_name>Van Damme</foaf:family_name>
+	<foaf:givenname>Marie-Dominique</foaf:givenname>
+	<foaf:member rdf:resource="http://www.semanticweb.org/bbucher/ontologies/2025/9/geodata#geodata-paris"/>
+	<foaf:name>Marie-Dominique Van Damme</foaf:name>
+	<foaf:title>Mme.</foaf:title>
+	<foaf:workInfoHomepage>https://www.umr-lastig.fr/mdvandamme/</foaf:workInfoHomepage>
+</rdf:Description>
+<!--  -->
+
+<!-- https://geodata-paris.fr -->
+
+<rdf:Description rdf:about="https://geodata-paris.fr">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
+</rdf:RDF>
