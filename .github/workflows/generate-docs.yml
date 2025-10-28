@@ -41,16 +41,16 @@ jobs:
       run: |
         java -jar widoco.jar -ontFile $ONTOLOGY_FILE -outFolder docs/lode/ -getOntologyMetadata -oops -rewriteAll -webVowl
         mv docs/lode docs/lode-tmp
-        mv docs/lode-tmp/doc docs/lode
+        mv docs/lode-tmp/ docs/lode
         mv docs/lode/index-en.html docs/lode/index.html
         mv docs/lode/OOPSevaluation docs/lode/oops
         mv docs/lode/oops/oopsEval.html docs/lode/oops/index.html
 
-    - name: Generate docs with Ontospy
-      run: |
-        ontospy gendocs -o docs/browse --type 2 --preflabel label --nobrowser $ONTOLOGY_FILE
-        ontospy gendocs -o docs/tree --type 4 --preflabel label --nobrowser $ONTOLOGY_FILE
-        ontospy gendocs -o docs/graph --type 10 --preflabel label --nobrowser $ONTOLOGY_FILE
+#    - name: Generate docs with Ontospy
+#      run: |
+#        ontospy gendocs -o docs/browse --type 2 --preflabel label --nobrowser $ONTOLOGY_FILE
+#        ontospy gendocs -o docs/tree --type 4 --preflabel label --nobrowser $ONTOLOGY_FILE
+#        ontospy gendocs -o docs/graph --type 10 --preflabel label --nobrowser $ONTOLOGY_FILE
 
     - name: Commit and push
       run: |
