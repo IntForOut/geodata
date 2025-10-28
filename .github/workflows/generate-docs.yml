@@ -53,6 +53,10 @@ jobs:
         ontospy gendocs -o docs/graph --type 10 --preflabel label --nobrowser $ONTOLOGY_FILE
 
     - name: Commit and push
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
       run: |
         git config --global user.name 'Marie-Dominique Van Damme'
         git config --global user.email 'marie-dominique.vandamme@ign.fr'
