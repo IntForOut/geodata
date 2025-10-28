@@ -54,6 +54,8 @@ jobs:
 
     - name: Commit and push
       run: |
+        git config --global user.name 'Marie-Dominique Van Damme'
+        git config --global user.email 'marie-dominique.vandamme@ign.fr'
         git fetch
         git checkout gh-pages
         rm -rf browse tree graph lode
