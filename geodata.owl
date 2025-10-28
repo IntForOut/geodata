@@ -17,6 +17,7 @@
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 	xmlns:vann="http://purl.org/vocab/vann/"
+	xmlns:terms="http://purl.org/dc/terms/"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
 	xmlns:vocab="http://www.w3.org/1999/xhtml/vocab#"
 	xmlns:topo="http://data.ign.fr/def/topo#"
@@ -27,10 +28,9 @@
 	<owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
 	<owl:imports rdf:resource="http://www.w3.org/ns/dcat3"/>
 	<owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
-	<owl:imports rdf:resource="http://data.ign.fr/def/topo#"/>
 	<rdfs:comment>Ontology to describe geodatasets in support of knowledge production and transfer</rdfs:comment>
-	<dc:title xml:lang="fr">Ontologie des jeux de données géospatiales</dc:title>
-    <dc:title xml:lang="en">Ontology for Geospatial Datasets</dc:title>
+	<terms:title xml:lang="fr">Ontologie des jeux de données géospatiales</terms:title>
+    <terms:title xml:lang="en">Ontology for Geospatial Datasets</terms:title>
     <vann:preferredNamespacePrefix>geodata</vann:preferredNamespacePrefix>
     <vann:preferredNamespaceUri rdf:resource="https://intforout.github.io/geodata#"/>
 </rdf:Description>
