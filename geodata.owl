@@ -249,6 +249,7 @@
 
 <rdf:Description rdf:about="https://geodata-paris.fr">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+	<rdfs:label xml:lang="fr">Géodata Paris (ex ENSG-Géomatique)</rdfs:label>
 </rdf:Description>
 
 
