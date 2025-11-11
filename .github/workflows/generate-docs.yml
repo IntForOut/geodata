@@ -37,8 +37,7 @@ jobs:
 
     - name: Generate docs with Widoco
       run: |
-        export DISPLAY=:0.0
-        java -jar widoco.jar -ontFile $ONTOLOGY_FILE -outFolder docs/ -getOntologyMetadata -includeImportedOntologies -uniteSections
+        java -Djava.awt.headless=true -jar widoco.jar -ontFile $ONTOLOGY_FILE -outFolder docs/ -getOntologyMetadata -includeImportedOntologies -uniteSections
         mv docs/index-en.html docs/index.html
 
     - name: Commit and push
