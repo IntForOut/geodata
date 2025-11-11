@@ -4,5 +4,11 @@
 @prefix : <> .
 <..\index-en.html> a prov:Entity;
 	 dc:title "Ontology for Geospatial Datasets";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 .
+:agent0 a prov:Agent; foaf:name "Ana-Maria Raimond".
+:agent1 a prov:Agent; foaf:name "Bénédicte Bucher".
+:agent2 a prov:Agent; foaf:name "Marie-Dominique Van Damme".
