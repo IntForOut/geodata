@@ -49,6 +49,15 @@ jobs:
         date > generated.txt
         git config user.name github-actions
         git config user.email github-actions@github.com
+        git add docs/index.html
+        git add docs/ontology.jsonld
+        git add docs/ontology.nt
+        git add docs/ontology.rdf
+        git add docs/ontology.ttl
+        git add docs/provenance/
+        git add docs/readme.md
+        git add docs/resources/
+        git add generated.txt
         git commit -m "Automatically generate documentation from geodata OWL ontology file using Widoco."
         git push || exit 0
 
