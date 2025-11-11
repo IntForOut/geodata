@@ -39,33 +39,17 @@ jobs:
 
     - name: Generate docs with Widoco (LODE)
       run: |
-        java -jar widoco.jar -ontFile $ONTOLOGY_FILE -outFolder docs/lode/ -getOntologyMetadata -oops -rewriteAll -webVowl
-        mv docs/lode docs/lode-tmp
-        mv docs/lode-tmp/ docs/lode
-        mv docs/lode/index-en.html docs/lode/index.html
-        mv docs/lode/OOPSevaluation docs/lode/oops
-        mv docs/lode/oops/oopsEval.html docs/lode/oops/index.html
-
-    - name: Generate docs with Ontospy
-      run: |
-        ontospy gendocs -o docs/browse --type 2 --preflabel label --nobrowser $ONTOLOGY_FILE
-        ontospy gendocs -o docs/tree --type 4 --preflabel label --nobrowser $ONTOLOGY_FILE
-        ontospy gendocs -o docs/graph --type 10 --preflabel label --nobrowser $ONTOLOGY_FILE
+        java -jar widoco.jar -ontFile $ONTOLOGY_FILE -outFolder docs/ -getOntologyMetadata -includeImportedOntologies -uniteSections
+        mv docs/index-en.html docs/index.html
 
     - name: Commit and push
       env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OWNER: ${{ github.repository_owner }}
-          REPO: ${{ github.event.repository.name }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git fetch
-        git checkout gh-pages
-        rm -rf browse tree graph lode
-        mv docs/* .
-        git add browse graph lode tree
-        git commit -m "Automatically generate documentation from geodata OWL ontology file using Ontospy and Widoco (lode)."
+        date > generated.txt
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git commit -m "Automatically generate documentation from geodata OWL ontology file using Widoco."
         git push || exit 0
 
     
