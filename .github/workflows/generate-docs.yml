@@ -68,7 +68,4 @@ jobs:
         git commit -m "Automatically generate documentation from geodata OWL ontology file using Ontospy and Widoco (lode)."
         git push || exit 0
 
-    # - name: Hotfix graph nodes sizes in ontospy docs
-    #   run: |
-    #     find docs/graph/index.html -type f -exec sed -i "s/minNodeSize: 1,/minNodeSize: 2,/g" {} +
-    #     find docs/graph/index.html -type f -exec sed -i "s/maxNodeSize: 30,/maxNodeSize: 24,/g" {} +
+    
