@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://www.umr-lastig.fr/geodata/"
-     xml:base="https://www.umr-lastig.fr/geodata/"
+<rdf:RDF xmlns="http://purl.org/www.umr-lastig.fr/geodata/"
+     xml:base="http://purl.org/www.umr-lastig.fr/geodata"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:org="http://www.w3.org/ns/org#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -22,7 +22,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:vocab="http://www.w3.org/1999/xhtml/vocab#"
      xmlns:schema="http://schema.org/">
-    <owl:Ontology rdf:about="https://www.umr-lastig.fr/geodata">
+    <owl:Ontology rdf:about="http://purl.org/www.umr-lastig.fr/geodata">
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/dcat3"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
@@ -84,38 +84,38 @@
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#hasConcept -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#hasConcept -->
 
-    <owl:ObjectProperty rdf:about="https://www.umr-lastig.fr/geodata#hasConcept">
-        <rdfs:domain rdf:resource="https://www.umr-lastig.fr/geodata#Representation"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/www.umr-lastig.fr/geodata#hasConcept">
+        <rdfs:domain rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Representation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#hasData -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#hasData -->
 
-    <owl:ObjectProperty rdf:about="https://www.umr-lastig.fr/geodata#hasData">
-        <rdfs:domain rdf:resource="https://www.umr-lastig.fr/geodata#Representation"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/www.umr-lastig.fr/geodata#hasData">
+        <rdfs:domain rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Representation"/>
         <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#hasMethodOfInstruction -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#hasMethodOfInstruction -->
 
-    <owl:ObjectProperty rdf:about="https://www.umr-lastig.fr/geodata#hasMethodOfInstruction">
-        <rdfs:domain rdf:resource="https://www.umr-lastig.fr/geodata#Collection"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/www.umr-lastig.fr/geodata#hasMethodOfInstruction">
+        <rdfs:domain rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Collection"/>
         <rdfs:range rdf:resource="http://purl.org/dc/terms/MethodOfInstruction"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#has_member -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#has_member -->
 
-    <owl:ObjectProperty rdf:about="https://www.umr-lastig.fr/geodata#has_member">
-        <rdfs:domain rdf:resource="https://www.umr-lastig.fr/geodata#Collection"/>
-        <rdfs:range rdf:resource="https://www.umr-lastig.fr/geodata#CollectionItem"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/www.umr-lastig.fr/geodata#has_member">
+        <rdfs:domain rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Collection"/>
+        <rdfs:range rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#CollectionItem"/>
     </owl:ObjectProperty>
     
 
@@ -137,50 +137,50 @@
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#Collection -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#Collection -->
 
-    <owl:Class rdf:about="https://www.umr-lastig.fr/geodata#Collection">
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Collection">
         <rdfs:comment>Collection of items that supports the usage of geodata for a pedagogic or learning purpose, in relationship with given concepts</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#CollectionItem -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#CollectionItem -->
 
-    <owl:Class rdf:about="https://www.umr-lastig.fr/geodata#CollectionItem">
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#CollectionItem">
         <rdfs:comment>A collection item is composed of different pieces of data, usually selections from bigger datasets, associated with a proposed visualisation, and narratives that connect the visual items to the concepts of the collection. It has a spatial and temporal extent.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#Geodata_process -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#Geodata_process -->
 
-    <owl:Class rdf:about="https://www.umr-lastig.fr/geodata#Geodata_process">
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Geodata_process">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
         <rdfs:comment>Process to derive data, that may combine data services but not necessarily</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#Geodataset -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#Geodataset -->
 
-    <owl:Class rdf:about="https://www.umr-lastig.fr/geodata#Geodataset">
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Geodataset">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
     </owl:Class>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#Geodataset_series -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#Geodataset_series -->
 
-    <owl:Class rdf:about="https://www.umr-lastig.fr/geodata#Geodataset_series">
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Geodataset_series">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#DatasetSeries"/>
     </owl:Class>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#Representation -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#Representation -->
 
-    <owl:Class rdf:about="https://www.umr-lastig.fr/geodata#Representation">
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Representation">
         <rdfs:comment>Cette classe décrit la représentation d&apos;un concept dans un jeu de données, dans un schéma de données, dans une collection. Elle permet de faire le lien entre des données et des concepts. C&apos;est une classe plutôt qu&apos;une propriété pour permettre de plus facilement lui ajouter des propriétés qui précisent le mode de représentation, par exemple si un jeu ReseauDeMobilité comporte des instances de réseaux de mobilité ou alors représente globalement un réseau de mobilité.</rdfs:comment>
     </owl:Class>
     
@@ -203,41 +203,41 @@
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#amraimond -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#amraimond -->
 
-    <owl:NamedIndividual rdf:about="https://www.umr-lastig.fr/geodata#amraimond">
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#amraimond">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <prov:actedOnBehalfOf rdf:resource="https://www.umr-lastig.fr/geodata#geodata-paris"/>
+        <prov:actedOnBehalfOf rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
         <foaf:family_name>Olteanu-Raimond</foaf:family_name>
         <foaf:givenname>Ana-Maria</foaf:givenname>
-        <foaf:member rdf:resource="https://www.umr-lastig.fr/geodata#geodata-paris"/>
+        <foaf:member rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
         <foaf:name>Ana-Maria Olteanu-Raimond</foaf:name>
         <foaf:title>Mme.</foaf:title>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#bbucher -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#bbucher -->
 
-    <owl:NamedIndividual rdf:about="https://www.umr-lastig.fr/geodata#bbucher">
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#bbucher">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <prov:actedOnBehalfOf rdf:resource="https://www.umr-lastig.fr/geodata#geodata-paris"/>
+        <prov:actedOnBehalfOf rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
         <foaf:family_name>Bucher</foaf:family_name>
         <foaf:givenname>Bénédicte</foaf:givenname>
-        <foaf:member rdf:resource="https://www.umr-lastig.fr/geodata#geodata-paris"/>
+        <foaf:member rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
         <foaf:name>Bénédicte Bucher</foaf:name>
         <foaf:title>Mme.</foaf:title>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#geodata-paris -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#geodata-paris -->
 
-    <owl:NamedIndividual rdf:about="https://www.umr-lastig.fr/geodata#geodata-paris">
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
@@ -247,16 +247,16 @@
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#mdvandamme -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#mdvandamme -->
 
-    <owl:NamedIndividual rdf:about="https://www.umr-lastig.fr/geodata#mdvandamme">
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#mdvandamme">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <prov:actedOnBehalfOf rdf:resource="https://www.umr-lastig.fr/geodata#geodata-paris"/>
+        <prov:actedOnBehalfOf rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
         <foaf:family_name>Van Damme</foaf:family_name>
         <foaf:givenname>Marie-Dominique</foaf:givenname>
-        <foaf:member rdf:resource="https://www.umr-lastig.fr/geodata#geodata-paris"/>
+        <foaf:member rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
         <foaf:name>Marie-Dominique Van Damme</foaf:name>
         <foaf:title>Mme.</foaf:title>
         <foaf:workInfoHomepage>https://www.umr-lastig.fr/mdvandamme/</foaf:workInfoHomepage>
@@ -264,10 +264,10 @@
     
 
 
-    <!-- https://www.umr-lastig.fr/geodata#BD_TOPO®_V3 -->
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3 -->
 
-    <owl:NamedIndividual rdf:about="https://www.umr-lastig.fr/geodata#BD_TOPO®_V3">
-        <rdf:type rdf:resource="https://www.umr-lastig.fr/geodata#Geodataset"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3">
+        <rdf:type rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
         <dcat:title xml:lang="fr">BD TOPO® V3. La BD TOPO® permet de couvrir de manière cohérente l'ensemble des entités géographiques et administratives du territoire national. La BD TOPO® fournit une information de référence à tous les acteurs de la gestion, de l'aménagement et de l'observation du territoire pour analyser, situer, représenter des données dans leur réalité géographique</dcat:title>
         <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BD TOPO®</schema:name>
         <schema:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BD TOPO® description vectorielle 3D (</schema:alternateName>
