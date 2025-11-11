@@ -36,7 +36,7 @@ jobs:
         # pip install git+https://github.com/vemonet/Ontospy@improve-labels
         # pip install Django>=1.10.3 Pygments==2.1.3
         # pip install ontospy
-        wget -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-17-widoco-1.4.17-jar-with-dependencies.jar
+        wget -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-11.jar
 
     - name: Generate docs with Widoco
       run: |
