@@ -31,6 +31,9 @@
         <vann:preferredNamespacePrefix>geodata</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://intforout.github.io/geodata#"/>
         <rdfs:comment>Ontology to describe geodatasets in support of knowledge production and transfer</rdfs:comment>
+        <dc:creator>Bénédicte Bucher</dc:creator>
+        <dc:creator>Ana-Maria Raimond</dc:creator>
+        <dc:creator>Marie-Dominique Van Damme</dc:creator>
     </owl:Ontology>
     
 
