@@ -1,12 +1,10 @@
 name: Generate geodata documentation
+
 on:
-  workflow_dispatch:
   push:
     branches: [ main ]
-    paths:
-    - 'geodata.owl'
+
 env:
-  # ONTOLOGY_FILE: ontology/sio/release/sio-subset-labels.owl
   ONTOLOGY_FILE: geodata.owl
 jobs:
   generate-docs:
