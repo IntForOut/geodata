@@ -2,7 +2,7 @@
 
 Ontology to describe geodatasets in support of knowledge production and transfer
 
-Documentation site: **[geodata](https://intforout.github.io/geodata/index.html)**
+Documentation site: **[geodata](https://www.umr-lastig.fr/geodata/index.html)**
 
 
 
