@@ -325,6 +325,34 @@
     </owl:NamedIndividual>
     
 
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint -->
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint">
+        <rdf:type rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
+        <dcat:title xml:lang="fr">Camptocamp.org-waypoints</dcat:title>
+        <dcat:description xml:lang="fr">Site collaboratif et interactif. On peut y trouver des informations sur la montagne : conditions sur le terrain (manteau neigeux par exemple), descriptions de sommets, itinéraires de ski de randonnée ou grandes voies d’escalade par exemple, photographies, articles techniques ou récits de montagne. Certaines de ces informations sont modifiables 
+        par tout contributeur enregistré . Vous y trouverez aussi un forum qui vous permet d’échanger.</dcat:description>
+        <dcat:language>fr-FR</dcat:language>
+        <dcat:distribution>
+            <dcat:Distribution rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson">
+                <dcat:format>GeoJSON</dcat:format>
+                <dcat:accessURL rdf:resource="https://api.camptocamp.org/waypoints"/>
+            </dcat:Distribution>
+        </dcat:distribution>
+    </owl:NamedIndividual>
+
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route -->
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route">
+        <rdf:type rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
+        <dcat:title xml:lang="fr">Camptocamp.org-routes</dcat:title>
+        <dcat:language>fr-FR</dcat:language>
+        <dcat:distribution>
+            <dcat:Distribution rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson">
+                <dcat:format>GeoJSON</dcat:format>
+                <dcat:accessURL rdf:resource="https://api.camptocamp.org/routes"/>
+            </dcat:Distribution>
+        </dcat:distribution>
+    </owl:NamedIndividual>
+
 
     <!-- https://geodata-paris.fr -->
 
