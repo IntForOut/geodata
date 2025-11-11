@@ -1,4 +1,4 @@
-name: Generate geodata documentation
+name: Generate geodata ontology documentation
 
 on:
   workflow_dispatch:
