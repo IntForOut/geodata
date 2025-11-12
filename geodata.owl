@@ -297,7 +297,17 @@
 
     <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Geodataset">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdf:title>geodataset</rdf:title>
     </owl:Class>
+
+
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset -->
+
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Geodataset"/>
+        <rdf:title>research dataset</rdf:title>
+    </owl:Class>
+    
     
 
 
