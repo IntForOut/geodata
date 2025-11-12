@@ -172,11 +172,8 @@
 # 
 # http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset
 <http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Geodataset> .
-<http://www.w3.org/ns/dcat#Geodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
 <http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#title> "research dataset" .
-# 
-# http://www.w3.org/ns/dcat#Geodataset
 # 
 # http://xmlns.com/foaf/0.1/Organization
 <http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

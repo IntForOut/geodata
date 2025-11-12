@@ -197,12 +197,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset
 :Research_geodataset rdf:type owl:Class ;
-                     rdfs:subClassOf <http://www.w3.org/ns/dcat#Geodataset> ;
+                     rdfs:subClassOf :Geodataset ;
                      rdf:title "research dataset" .
-
-
-###  http://www.w3.org/ns/dcat#Geodataset
-<http://www.w3.org/ns/dcat#Geodataset> rdf:type owl:Class .
 
 
 ###  http://xmlns.com/foaf/0.1/Organization
