@@ -304,7 +304,7 @@
     <!-- http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset -->
 
     <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Geodataset"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
         <rdf:title>research dataset</rdf:title>
     </owl:Class>
     
