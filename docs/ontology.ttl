@@ -79,6 +79,10 @@
 <http://schema.org/name> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#title
+rdf:title rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/ns/dcat#format
 <http://www.w3.org/ns/dcat#format> rdf:type owl:AnnotationProperty .
 
@@ -177,7 +181,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/www.umr-lastig.fr/geodata#Geodataset
 :Geodataset rdf:type owl:Class ;
-            rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> .
+            rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ;
+            rdf:title "geodataset" .
 
 
 ###  http://purl.org/www.umr-lastig.fr/geodata#Geodataset_series
@@ -188,6 +193,16 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/www.umr-lastig.fr/geodata#Representation
 :Representation rdf:type owl:Class ;
                 rdfs:comment "Cette classe décrit la représentation d'un concept dans un jeu de données, dans un schéma de données, dans une collection. Elle permet de faire le lien entre des données et des concepts. C'est une classe plutôt qu'une propriété pour permettre de plus facilement lui ajouter des propriétés qui précisent le mode de représentation, par exemple si un jeu ReseauDeMobilité comporte des instances de réseaux de mobilité ou alors représente globalement un réseau de mobilité." .
+
+
+###  http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset
+:Research_geodataset rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.w3.org/ns/dcat#Geodataset> ;
+                     rdf:title "research dataset" .
+
+
+###  http://www.w3.org/ns/dcat#Geodataset
+<http://www.w3.org/ns/dcat#Geodataset> rdf:type owl:Class .
 
 
 ###  http://xmlns.com/foaf/0.1/Organization
