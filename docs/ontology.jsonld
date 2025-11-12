@@ -195,6 +195,60 @@
     "@value" : "Mme."
   } ]
 }, {
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/dcat#Distribution" ],
+  "http://www.w3.org/ns/dcat#accessURL" : [ {
+    "@id" : "https://api.camptocamp.org/routes"
+  } ],
+  "http://www.w3.org/ns/dcat#format" : [ {
+    "@value" : "GeoJSON"
+  } ]
+}, {
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/dcat#Distribution" ],
+  "http://www.w3.org/ns/dcat#accessURL" : [ {
+    "@id" : "https://api.camptocamp.org/waypoints"
+  } ],
+  "http://www.w3.org/ns/dcat#format" : [ {
+    "@value" : "GeoJSON"
+  } ]
+}, {
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Geodataset"
+  } ],
+  "http://www.w3.org/ns/dcat#distribution" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson"
+  } ],
+  "http://www.w3.org/ns/dcat#language" : [ {
+    "@value" : "fr-FR"
+  } ],
+  "http://www.w3.org/ns/dcat#title" : [ {
+    "@language" : "fr",
+    "@value" : "Camptocamp.org-routes"
+  } ]
+}, {
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Geodataset"
+  } ],
+  "http://www.w3.org/ns/dcat#description" : [ {
+    "@language" : "fr",
+    "@value" : "Site collaboratif et interactif. On peut y trouver des informations sur la montagne : conditions sur le terrain (manteau neigeux par exemple), descriptions de sommets, itinéraires de ski de randonnée ou grandes voies d’escalade par exemple, photographies, articles techniques ou récits de montagne. Certaines de ces informations sont modifiables \n        par tout contributeur enregistré . Vous y trouverez aussi un forum qui vous permet d’échanger."
+  } ],
+  "http://www.w3.org/ns/dcat#distribution" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson"
+  } ],
+  "http://www.w3.org/ns/dcat#language" : [ {
+    "@value" : "fr-FR"
+  } ],
+  "http://www.w3.org/ns/dcat#title" : [ {
+    "@language" : "fr",
+    "@value" : "Camptocamp.org-waypoints"
+  } ]
+}, {
   "@id" : "http://purl.org/www.umr-lastig.fr/geodata#geodata-paris",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/prov#Agent", "http://www.w3.org/ns/prov#Organization" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -294,6 +348,12 @@
   "@id" : "http://schema.org/name",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://www.w3.org/ns/dcat#description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/dcat#format",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://www.w3.org/ns/dcat#language",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -314,6 +374,12 @@
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://api.camptocamp.org/routes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://api.camptocamp.org/waypoints",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "https://geodata-paris.fr",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],

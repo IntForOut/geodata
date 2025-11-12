@@ -43,6 +43,12 @@
 # http://schema.org/name
 <http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://www.w3.org/ns/dcat#description
+<http://www.w3.org/ns/dcat#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/dcat#format
+<http://www.w3.org/ns/dcat#format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://www.w3.org/ns/dcat#language
 <http://www.w3.org/ns/dcat#language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -175,6 +181,35 @@
 <http://purl.org/www.umr-lastig.fr/geodata#bbucher> <http://xmlns.com/foaf/0.1/name> "Bénédicte Bucher" .
 <http://purl.org/www.umr-lastig.fr/geodata#bbucher> <http://xmlns.com/foaf/0.1/title> "Mme." .
 # 
+# http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/ns/dcat#accessURL> <https://api.camptocamp.org/routes> .
+<https://api.camptocamp.org/routes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/ns/dcat#format> "GeoJSON" .
+# 
+# http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/ns/dcat#accessURL> <https://api.camptocamp.org/waypoints> .
+<https://api.camptocamp.org/waypoints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/ns/dcat#format> "GeoJSON" .
+# 
+# http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/ns/dcat#distribution> <http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/ns/dcat#language> "fr-FR" .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/ns/dcat#title> "Camptocamp.org-routes"@fr .
+# 
+# http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#distribution> <http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#description> "Site collaboratif et interactif. On peut y trouver des informations sur la montagne : conditions sur le terrain (manteau neigeux par exemple), descriptions de sommets, itinéraires de ski de randonnée ou grandes voies d’escalade par exemple, photographies, articles techniques ou récits de montagne. Certaines de ces informations sont modifiables \n        par tout contributeur enregistré . Vous y trouverez aussi un forum qui vous permet d’échanger."@fr .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#language> "fr-FR" .
+<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#title> "Camptocamp.org-waypoints"@fr .
+# 
 # http://purl.org/www.umr-lastig.fr/geodata#geodata-paris
 <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
@@ -233,5 +268,9 @@
 # https://geodata-paris.fr
 <https://geodata-paris.fr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://geodata-paris.fr> <http://www.w3.org/2000/01/rdf-schema#label> "Géodata Paris (ex ENSG-Géomatique)"@fr .
+# 
+# https://api.camptocamp.org/routes
+# 
+# https://api.camptocamp.org/waypoints
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
