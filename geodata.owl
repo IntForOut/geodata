@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.org/www.umr-lastig.fr/geodata/"
-     xml:base="http://purl.org/www.umr-lastig.fr/geodata"
+     xml:base="http://purl.org/www.umr-lastig.fr/geodata/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:org="http://www.w3.org/ns/org#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -26,14 +26,14 @@
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/dcat3"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/prov#"/>
+        <dc:creator>Ana-Maria Raimond</dc:creator>
+        <dc:creator>Bénédicte Bucher</dc:creator>
+        <dc:creator>Marie-Dominique Van Damme</dc:creator>
         <terms:title xml:lang="fr">Ontologie des jeux de données géospatiales</terms:title>
         <terms:title xml:lang="en">Ontology for Geospatial Datasets</terms:title>
         <vann:preferredNamespacePrefix>geodata</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://intforout.github.io/geodata#"/>
         <rdfs:comment>Ontology to describe geodatasets in support of knowledge production and transfer</rdfs:comment>
-        <dc:creator>Bénédicte Bucher</dc:creator>
-        <dc:creator>Ana-Maria Raimond</dc:creator>
-        <dc:creator>Marie-Dominique Van Damme</dc:creator>
     </owl:Ontology>
     
 
@@ -46,6 +46,114 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/type -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/type"/>
+    
+
+
+    <!-- http://schema.org/alternateName -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/alternateName"/>
+    
+
+
+    <!-- http://schema.org/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/creator"/>
+    
+
+
+    <!-- http://schema.org/dateCreated -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/dateCreated"/>
+    
+
+
+    <!-- http://schema.org/datePublished -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/datePublished"/>
+    
+
+
+    <!-- http://schema.org/description -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/description"/>
+    
+
+
+    <!-- http://schema.org/encodingFormat -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/encodingFormat"/>
+    
+
+
+    <!-- http://schema.org/keywords -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/keywords"/>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/name"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#format -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/dcat#format"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#language -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/dcat#language"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#servesDataset -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/dcat#servesDataset"/>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#title -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/dcat#title"/>
     
 
 
@@ -70,6 +178,29 @@
     <!-- http://xmlns.com/foaf/0.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Date -->
+
+    <rdfs:Datatype rdf:about="http://schema.org/Date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -189,6 +320,10 @@
     <!-- http://xmlns.com/foaf/0.1/Organization -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+
+
+
+    
     
 
 
@@ -200,6 +335,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    
     
 
 
@@ -234,16 +373,7 @@
     </owl:NamedIndividual>
     
 
-
-    <!-- http://purl.org/www.umr-lastig.fr/geodata#geodata-paris -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris">
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
-        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <foaf:homepage rdf:resource="https://geodata-paris.fr"/>
-        <foaf:name>Géodata Paris</foaf:name>
-    </owl:NamedIndividual>
+    
     
 
 
@@ -253,7 +383,6 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <prov:actedOnBehalfOf rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
         <foaf:family_name>Van Damme</foaf:family_name>
         <foaf:givenname>Marie-Dominique</foaf:givenname>
         <foaf:member rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
@@ -268,25 +397,23 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3">
         <rdf:type rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
-        <dcat:title xml:lang="fr">BD TOPO® V3. La BD TOPO® permet de couvrir de manière cohérente l'ensemble des entités géographiques et administratives du territoire national. La BD TOPO® fournit une information de référence à tous les acteurs de la gestion, de l'aménagement et de l'observation du territoire pour analyser, situer, représenter des données dans leur réalité géographique</dcat:title>
-        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BD TOPO®</schema:name>
         <schema:alternateName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BD TOPO® description vectorielle 3D (</schema:alternateName>
-	    <schema:creator rdf:resource="http://njh.me/contact.geoservices@ign.fr"/>
-	    <schema:dateCreated rdf:datatype="http://schema.org/Date">2002-12-15</schema:dateCreated>
-	    <schema:datePublished rdf:datatype="http://schema.org/Date">2025-06-15</schema:datePublished>
-	    <schema:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La BD TOPO® version 3.5 contient une description vectorielle 3D (structurée en objets) des éléments du territoire et de ses infrastructures, de précision métrique.
+        <schema:creator rdf:resource="http://njh.me/contact.geoservices@ign.fr"/>
+        <schema:dateCreated rdf:datatype="http://schema.org/Date">2002-12-15</schema:dateCreated>
+        <schema:datePublished rdf:datatype="http://schema.org/Date">2025-06-15</schema:datePublished>
+        <schema:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La BD TOPO® version 3.5 contient une description vectorielle 3D (structurée en objets) des éléments du territoire et de ses infrastructures, de précision métrique.
 
 	Les objets de la BD TOPO® sont structurés en thèmes : 
-	 - l'administratif ; 
+	 - l&apos;administratif ; 
 	 - le bâti ; 
-	 - l'hydrographie ; 
+	 - l&apos;hydrographie ; 
 	 - les lieux nommés ; 
-	 - l'occupation du sol ; 
+	 - l&apos;occupation du sol ; 
 	 - les services et activités ; 
 	 - le transport ; 
 	 - les zones réglementées. 
 
-	Le processus de production 3D permet de fournir l'altimétrie des objets, ainsi que la hauteur des bâtiments. 
+	Le processus de production 3D permet de fournir l&apos;altimétrie des objets, ainsi que la hauteur des bâtiments. 
 
 	Le relief est décrit sous forme de modèles numériques de terrain (MNT). 
 
@@ -294,74 +421,48 @@
 
 	Le produit **BDTOPO® Express** est l’édition hebdomadaire de la BDTOPO® si vous avez besoin de travailler sur de la donnée topographique à haute fréquence (disponible depuis mai 2025). 
 
-	Le produit **Différentiel BD TOPO®** contient les différences géométriques et sémantiques sur l'ensemble du contenu BD TOPO® entre deux éditions trimestrielles successives BD TOPO®. 
+	Le produit **Différentiel BD TOPO®** contient les différences géométriques et sémantiques sur l&apos;ensemble du contenu BD TOPO® entre deux éditions trimestrielles successives BD TOPO®. 
 
-	Plus précisément, l'édition N du Différentiel BD TOPO® en vigueur contient tout objet de la BD TOPO® dont la date de modification, la date de création ou la date de suppression en base est postérieure à la date de prédiffusion de la précédente édition trimestrielle (N-1), équivalent à une activité de mise à jour par l'IGN d'une durée de 3 mois.</schema:description>
-
+	Plus précisément, l&apos;édition N du Différentiel BD TOPO® en vigueur contient tout objet de la BD TOPO® dont la date de modification, la date de création ou la date de suppression en base est postérieure à la date de prédiffusion de la précédente édition trimestrielle (N-1), équivalent à une activité de mise à jour par l&apos;IGN d&apos;une durée de 3 mois.</schema:description>
+        <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPKG</schema:encodingFormat>
+        <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PostGreSQL</schema:encodingFormat>
         <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SHP</schema:encodingFormat>
-	    <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GPKG</schema:encodingFormat>
-	    <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PostGreSQL</schema:encodingFormat>
-	    <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WMTS</schema:encodingFormat>
-	    <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WMS</schema:encodingFormat>
-	    <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TMS</schema:encodingFormat>
-	    <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WFS</schema:encodingFormat>
-
-        <dcat:language>fr-FR</dcat:language>
+        <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TMS</schema:encodingFormat>
+        <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WFS</schema:encodingFormat>
+        <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WMS</schema:encodingFormat>
+        <schema:encodingFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WMTS</schema:encodingFormat>
         <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Altitude</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bâtiments</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dénominations géographiques</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hydrographie</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Réseaux de transport</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mobilité</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activités</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">données ouvertes</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eau</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forêts</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">haies</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">routes</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toponymie</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transports</schema:keywords>
-	    <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">végétation</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bâtiments</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dénominations géographiques</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hydrographie</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mobilité</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Réseaux de transport</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activités</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">données ouvertes</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eau</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forêts</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">haies</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">routes</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toponymie</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transports</schema:keywords>
+        <schema:keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">végétation</schema:keywords>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BD TOPO®</schema:name>
+        <dcat:language>fr-FR</dcat:language>
+        <dcat:title xml:lang="fr">BD TOPO® V3. La BD TOPO® permet de couvrir de manière cohérente l&apos;ensemble des entités géographiques et administratives du territoire national. La BD TOPO® fournit une information de référence à tous les acteurs de la gestion, de l&apos;aménagement et de l&apos;observation du territoire pour analyser, situer, représenter des données dans leur réalité géographique</dcat:title>
     </owl:NamedIndividual>
     
 
-    <!-- http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint -->
-    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint">
-        <rdf:type rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
-        <dcat:title xml:lang="fr">Camptocamp.org-waypoints</dcat:title>
-        <dcat:description xml:lang="fr">Site collaboratif et interactif. On peut y trouver des informations sur la montagne : conditions sur le terrain (manteau neigeux par exemple), descriptions de sommets, itinéraires de ski de randonnée ou grandes voies d’escalade par exemple, photographies, articles techniques ou récits de montagne. Certaines de ces informations sont modifiables 
-        par tout contributeur enregistré . Vous y trouverez aussi un forum qui vous permet d’échanger.</dcat:description>
-        <dcat:language>fr-FR</dcat:language>
-        <dcat:distribution>
-            <dcat:Distribution rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson">
-                <dcat:format>GeoJSON</dcat:format>
-                <dcat:accessURL rdf:resource="https://api.camptocamp.org/waypoints"/>
-            </dcat:Distribution>
-        </dcat:distribution>
-    </owl:NamedIndividual>
 
-    <!-- http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route -->
-    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route">
-        <rdf:type rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
-        <dcat:title xml:lang="fr">Camptocamp.org-routes</dcat:title>
-        <dcat:language>fr-FR</dcat:language>
-        <dcat:distribution>
-            <dcat:Distribution rdf:about="http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson">
-                <dcat:format>GeoJSON</dcat:format>
-                <dcat:accessURL rdf:resource="https://api.camptocamp.org/routes"/>
-            </dcat:Distribution>
-        </dcat:distribution>
-    </owl:NamedIndividual>
-
-
-    <!-- https://geodata-paris.fr -->
-
-    <owl:NamedIndividual rdf:about="https://geodata-paris.fr">
-        <rdfs:label xml:lang="fr">Géodata Paris (ex ENSG-Géomatique)</rdfs:label>
-    </owl:NamedIndividual>
+    <foaf:Organization rdf:about="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris">
+        <foaf:name>Géodata Paris (ex ENSG-Géomatique)</foaf:name>
+        <foaf:homepage rdf:resource="https://geodata-paris.fr"/>
+    </foaf:Organization>
+    
+    <foaf:Organization rdf:about="http://purl.org/www.umr-lastig.fr/geodata#ign">
+        <foaf:name>Institut national de l'information géographique et forestière</foaf:name>
+        <foaf:homepage rdf:resource="https://www.ign.fr/"/>
+    </foaf:Organization>
+    
+    
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
