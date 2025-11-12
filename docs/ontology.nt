@@ -19,6 +19,24 @@
 # #################################################################
 # 
 # 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/subject
+<http://purl.org/dc/elements/1.1/subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/type
+<http://purl.org/dc/terms/type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://schema.org/alternateName
 <http://schema.org/alternateName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -43,14 +61,14 @@
 # http://schema.org/name
 <http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://www.w3.org/ns/dcat#description
-<http://www.w3.org/ns/dcat#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://www.w3.org/ns/dcat#format
 <http://www.w3.org/ns/dcat#format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/ns/dcat#language
 <http://www.w3.org/ns/dcat#language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/dcat#servesDataset
+<http://www.w3.org/ns/dcat#servesDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/ns/dcat#title
 <http://www.w3.org/ns/dcat#title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -78,6 +96,9 @@
 # 
 # http://schema.org/Date
 <http://schema.org/Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 # 
 # 
 # 
@@ -163,6 +184,7 @@
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Person> .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://www.w3.org/ns/prov#actedOnBehalfOf> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
+<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://xmlns.com/foaf/0.1/family_name> "Olteanu-Raimond" .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://xmlns.com/foaf/0.1/givenname> "Ana-Maria" .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://xmlns.com/foaf/0.1/member> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
@@ -181,49 +203,24 @@
 <http://purl.org/www.umr-lastig.fr/geodata#bbucher> <http://xmlns.com/foaf/0.1/name> "Bénédicte Bucher" .
 <http://purl.org/www.umr-lastig.fr/geodata#bbucher> <http://xmlns.com/foaf/0.1/title> "Mme." .
 # 
-# http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/ns/dcat#accessURL> <https://api.camptocamp.org/routes> .
-<https://api.camptocamp.org/routes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> <http://www.w3.org/ns/dcat#format> "GeoJSON" .
-# 
-# http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/ns/dcat#accessURL> <https://api.camptocamp.org/waypoints> .
-<https://api.camptocamp.org/waypoints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> <http://www.w3.org/ns/dcat#format> "GeoJSON" .
-# 
-# http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/ns/dcat#distribution> <http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/ns/dcat#language> "fr-FR" .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route> <http://www.w3.org/ns/dcat#title> "Camptocamp.org-routes"@fr .
-# 
-# http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#distribution> <http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson> .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#description> "Site collaboratif et interactif. On peut y trouver des informations sur la montagne : conditions sur le terrain (manteau neigeux par exemple), descriptions de sommets, itinéraires de ski de randonnée ou grandes voies d’escalade par exemple, photographies, articles techniques ou récits de montagne. Certaines de ces informations sont modifiables \n        par tout contributeur enregistré . Vous y trouverez aussi un forum qui vous permet d’échanger."@fr .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#language> "fr-FR" .
-<http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint> <http://www.w3.org/ns/dcat#title> "Camptocamp.org-waypoints"@fr .
-# 
 # http://purl.org/www.umr-lastig.fr/geodata#geodata-paris
-<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
-<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Organization> .
 <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
 <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://xmlns.com/foaf/0.1/homepage> <https://geodata-paris.fr> .
-<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://xmlns.com/foaf/0.1/name> "Géodata Paris" .
+<https://geodata-paris.fr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://xmlns.com/foaf/0.1/name> "Géodata Paris (ex ENSG-Géomatique)" .
+# 
+# http://purl.org/www.umr-lastig.fr/geodata#ign
+<http://purl.org/www.umr-lastig.fr/geodata#ign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#ign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
+<http://purl.org/www.umr-lastig.fr/geodata#ign> <http://xmlns.com/foaf/0.1/homepage> <https://www.ign.fr/> .
+<https://www.ign.fr/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#ign> <http://xmlns.com/foaf/0.1/name> "Institut national de l'information géographique et forestière" .
 # 
 # http://purl.org/www.umr-lastig.fr/geodata#mdvandamme
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Person> .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
-<http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://www.w3.org/ns/prov#actedOnBehalfOf> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://xmlns.com/foaf/0.1/family_name> "Van Damme" .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://xmlns.com/foaf/0.1/givenname> "Marie-Dominique" .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://xmlns.com/foaf/0.1/member> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
@@ -266,11 +263,7 @@
 <http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3> <http://www.w3.org/ns/dcat#title> "BD TOPO® V3. La BD TOPO® permet de couvrir de manière cohérente l'ensemble des entités géographiques et administratives du territoire national. La BD TOPO® fournit une information de référence à tous les acteurs de la gestion, de l'aménagement et de l'observation du territoire pour analyser, situer, représenter des données dans leur réalité géographique"@fr .
 # 
 # https://geodata-paris.fr
-<https://geodata-paris.fr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://geodata-paris.fr> <http://www.w3.org/2000/01/rdf-schema#label> "Géodata Paris (ex ENSG-Géomatique)"@fr .
 # 
-# https://api.camptocamp.org/routes
-# 
-# https://api.camptocamp.org/waypoints
+# https://www.ign.fr/
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -23,6 +23,30 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/subject
+<http://purl.org/dc/elements/1.1/subject> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/type
+<http://purl.org/dc/terms/type> rdf:type owl:AnnotationProperty .
+
+
 ###  http://schema.org/alternateName
 <http://schema.org/alternateName> rdf:type owl:AnnotationProperty .
 
@@ -55,16 +79,16 @@
 <http://schema.org/name> rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/ns/dcat#description
-<http://www.w3.org/ns/dcat#description> rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.w3.org/ns/dcat#format
 <http://www.w3.org/ns/dcat#format> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/ns/dcat#language
 <http://www.w3.org/ns/dcat#language> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#servesDataset
+<http://www.w3.org/ns/dcat#servesDataset> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/ns/dcat#title
@@ -93,6 +117,10 @@
 
 ###  http://schema.org/Date
 <http://schema.org/Date> rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
 
 
 #################################################################
@@ -196,45 +224,18 @@
          <http://xmlns.com/foaf/0.1/title> "Mme." .
 
 
-###  http://purl.org/www.umr-lastig.fr/geodata#camptocamp-route-geojson
-:camptocamp-route-geojson rdf:type owl:NamedIndividual ,
-                                   <http://www.w3.org/ns/dcat#Distribution> ;
-                          <http://www.w3.org/ns/dcat#accessURL> <https://api.camptocamp.org/routes> ;
-                          <http://www.w3.org/ns/dcat#format> "GeoJSON" .
-
-
-###  http://purl.org/www.umr-lastig.fr/geodata#camptocamp-waypoint-geojson
-:camptocamp-waypoint-geojson rdf:type owl:NamedIndividual ,
-                                      <http://www.w3.org/ns/dcat#Distribution> ;
-                             <http://www.w3.org/ns/dcat#accessURL> <https://api.camptocamp.org/waypoints> ;
-                             <http://www.w3.org/ns/dcat#format> "GeoJSON" .
-
-
-###  http://purl.org/www.umr-lastig.fr/geodata#camptocamp_route
-:camptocamp_route rdf:type owl:NamedIndividual ,
-                           :Geodataset ;
-                  <http://www.w3.org/ns/dcat#distribution> :camptocamp-route-geojson ;
-                  <http://www.w3.org/ns/dcat#language> "fr-FR" ;
-                  <http://www.w3.org/ns/dcat#title> "Camptocamp.org-routes"@fr .
-
-
-###  http://purl.org/www.umr-lastig.fr/geodata#camptocamp_waypoint
-:camptocamp_waypoint rdf:type owl:NamedIndividual ,
-                              :Geodataset ;
-                     <http://www.w3.org/ns/dcat#distribution> :camptocamp-waypoint-geojson ;
-                     <http://www.w3.org/ns/dcat#description> """Site collaboratif et interactif. On peut y trouver des informations sur la montagne : conditions sur le terrain (manteau neigeux par exemple), descriptions de sommets, itinéraires de ski de randonnée ou grandes voies d’escalade par exemple, photographies, articles techniques ou récits de montagne. Certaines de ces informations sont modifiables 
-        par tout contributeur enregistré . Vous y trouverez aussi un forum qui vous permet d’échanger."""@fr ;
-                     <http://www.w3.org/ns/dcat#language> "fr-FR" ;
-                     <http://www.w3.org/ns/dcat#title> "Camptocamp.org-waypoints"@fr .
-
-
 ###  http://purl.org/www.umr-lastig.fr/geodata#geodata-paris
 :geodata-paris rdf:type owl:NamedIndividual ,
-                        <http://www.w3.org/ns/prov#Agent> ,
-                        <http://www.w3.org/ns/prov#Organization> ,
                         <http://xmlns.com/foaf/0.1/Organization> ;
                <http://xmlns.com/foaf/0.1/homepage> <https://geodata-paris.fr> ;
-               <http://xmlns.com/foaf/0.1/name> "Géodata Paris" .
+               <http://xmlns.com/foaf/0.1/name> "Géodata Paris (ex ENSG-Géomatique)" .
+
+
+###  http://purl.org/www.umr-lastig.fr/geodata#ign
+:ign rdf:type owl:NamedIndividual ,
+              <http://xmlns.com/foaf/0.1/Organization> ;
+     <http://xmlns.com/foaf/0.1/homepage> <https://www.ign.fr/> ;
+     <http://xmlns.com/foaf/0.1/name> "Institut national de l'information géographique et forestière" .
 
 
 ###  http://purl.org/www.umr-lastig.fr/geodata#mdvandamme
@@ -242,7 +243,6 @@
                      <http://www.w3.org/ns/prov#Agent> ,
                      <http://www.w3.org/ns/prov#Person> ,
                      <http://xmlns.com/foaf/0.1/Person> ;
-            <http://www.w3.org/ns/prov#actedOnBehalfOf> :geodata-paris ;
             <http://xmlns.com/foaf/0.1/family_name> "Van Damme" ;
             <http://xmlns.com/foaf/0.1/givenname> "Marie-Dominique" ;
             <http://xmlns.com/foaf/0.1/member> :geodata-paris ;
@@ -309,16 +309,11 @@
 
 
 ###  https://geodata-paris.fr
-<https://geodata-paris.fr> rdf:type owl:NamedIndividual ;
-                           rdfs:label "Géodata Paris (ex ENSG-Géomatique)"@fr .
+<https://geodata-paris.fr> rdf:type owl:NamedIndividual .
 
 
-###  https://api.camptocamp.org/routes
-<https://api.camptocamp.org/routes> rdf:type owl:NamedIndividual .
-
-
-###  https://api.camptocamp.org/waypoints
-<https://api.camptocamp.org/waypoints> rdf:type owl:NamedIndividual .
+###  https://www.ign.fr/
+<https://www.ign.fr/> rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
