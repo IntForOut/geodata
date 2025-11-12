@@ -160,7 +160,7 @@
 # http://purl.org/www.umr-lastig.fr/geodata#Geodataset
 <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Dataset> .
-<http://purl.org/www.umr-lastig.fr/geodata#Geodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#title> "geodataset" .
+<http://purl.org/www.umr-lastig.fr/geodata#Geodataset> <http://www.w3.org/2000/01/rdf-schema#label> "Geodataset" .
 # 
 # http://purl.org/www.umr-lastig.fr/geodata#Geodataset_series
 <http://purl.org/www.umr-lastig.fr/geodata#Geodataset_series> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -170,10 +170,10 @@
 <http://purl.org/www.umr-lastig.fr/geodata#Representation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/www.umr-lastig.fr/geodata#Representation> <http://www.w3.org/2000/01/rdf-schema#comment> "Cette classe décrit la représentation d'un concept dans un jeu de données, dans un schéma de données, dans une collection. Elle permet de faire le lien entre des données et des concepts. C'est une classe plutôt qu'une propriété pour permettre de plus facilement lui ajouter des propriétés qui précisent le mode de représentation, par exemple si un jeu ReseauDeMobilité comporte des instances de réseaux de mobilité ou alors représente globalement un réseau de mobilité." .
 # 
-# http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset
-<http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
-<http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#title> "research dataset" .
+# http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset
+<http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
+<http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset> <http://www.w3.org/2000/01/rdf-schema#label> "Research Geodataset" .
 # 
 # http://xmlns.com/foaf/0.1/Organization
 <http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -193,7 +193,6 @@
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Person> .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://www.w3.org/ns/prov#actedOnBehalfOf> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
-<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://xmlns.com/foaf/0.1/family_name> "Olteanu-Raimond" .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://xmlns.com/foaf/0.1/givenname> "Ana-Maria" .
 <http://purl.org/www.umr-lastig.fr/geodata#amraimond> <http://xmlns.com/foaf/0.1/member> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
@@ -213,16 +212,15 @@
 <http://purl.org/www.umr-lastig.fr/geodata#bbucher> <http://xmlns.com/foaf/0.1/title> "Mme." .
 # 
 # http://purl.org/www.umr-lastig.fr/geodata#geodata-paris
+<http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
 <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://xmlns.com/foaf/0.1/homepage> <https://geodata-paris.fr> .
-<https://geodata-paris.fr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> <http://xmlns.com/foaf/0.1/name> "Géodata Paris (ex ENSG-Géomatique)" .
 # 
 # http://purl.org/www.umr-lastig.fr/geodata#ign
 <http://purl.org/www.umr-lastig.fr/geodata#ign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#ign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Organization> .
 <http://purl.org/www.umr-lastig.fr/geodata#ign> <http://xmlns.com/foaf/0.1/homepage> <https://www.ign.fr/> .
-<https://www.ign.fr/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#ign> <http://xmlns.com/foaf/0.1/name> "Institut national de l'information géographique et forestière" .
 # 
 # http://purl.org/www.umr-lastig.fr/geodata#mdvandamme
@@ -272,7 +270,9 @@
 <http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3> <http://www.w3.org/ns/dcat#title> "BD TOPO® V3. La BD TOPO® permet de couvrir de manière cohérente l'ensemble des entités géographiques et administratives du territoire national. La BD TOPO® fournit une information de référence à tous les acteurs de la gestion, de l'aménagement et de l'observation du territoire pour analyser, situer, représenter des données dans leur réalité géographique"@fr .
 # 
 # https://geodata-paris.fr
+<https://geodata-paris.fr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 # 
 # https://www.ign.fr/
+<https://www.ign.fr/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

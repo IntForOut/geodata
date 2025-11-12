@@ -155,8 +155,8 @@
 }, {
   "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Geodataset",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#title" : [ {
-    "@value" : "geodataset"
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Geodataset"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/dcat#Dataset"
@@ -174,10 +174,10 @@
     "@value" : "Cette classe décrit la représentation d'un concept dans un jeu de données, dans un schéma de données, dans une collection. Elle permet de faire le lien entre des données et des concepts. C'est une classe plutôt qu'une propriété pour permettre de plus facilement lui ajouter des propriétés qui précisent le mode de représentation, par exemple si un jeu ReseauDeMobilité comporte des instances de réseaux de mobilité ou alors représente globalement un réseau de mobilité."
   } ]
 }, {
-  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Research_geodataset",
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#title" : [ {
-    "@value" : "research dataset"
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Research Geodataset"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Geodataset"
