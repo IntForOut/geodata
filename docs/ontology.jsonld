@@ -144,6 +144,22 @@
     "@value" : "A collection item is composed of different pieces of data, usually selections from bigger datasets, associated with a proposed visualisation, and narratives that connect the visual items to the concepts of the collection. It has a spatial and temporal extent."
   } ]
 }, {
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Geocatalog",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Geocatalog"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Geocatalog"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Geodataset"
+  }, {
+    "@id" : "http://www.w3.org/ns/dcat#Catalog"
+  } ]
+}, {
   "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Geodata_process",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -304,6 +320,21 @@
   } ],
   "http://xmlns.com/foaf/0.1/workInfoHomepage" : [ {
     "@value" : "https://www.umr-lastig.fr/mdvandamme/"
+  } ]
+}, {
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#ymeneroux",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/prov#Agent", "http://www.w3.org/ns/prov#Person", "http://xmlns.com/foaf/0.1/Person" ],
+  "http://xmlns.com/foaf/0.1/family_name" : [ {
+    "@value" : "Ménéroux"
+  } ],
+  "http://xmlns.com/foaf/0.1/givenname" : [ {
+    "@value" : "Yann"
+  } ],
+  "http://xmlns.com/foaf/0.1/member" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"
+  } ],
+  "http://xmlns.com/foaf/0.1/name" : [ {
+    "@value" : "Yann Méneroux"
   } ]
 }, {
   "@id" : "http://schema.org/Date",

@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://intforout.github.io/geodata#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://intforout.github.io/geodata#","name":"Ontology for Geospatial Datasets", "headline":"Document describing the ontology https://intforout.github.io/geodata#", "dateReleased":"Wed Nov 12 20:34:51 UTC 2025", "author":[{"@type":"Person","name":"Ana-Maria Raimond"},{"@type":"Person","name":"Bénédicte Bucher"},{"@type":"Person","name":"Marie-Dominique Van Damme"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://intforout.github.io/geodata#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://intforout.github.io/geodata#","name":"Ontology for Geospatial Datasets", "headline":"Document describing the ontology https://intforout.github.io/geodata#", "dateReleased":"Thu Dec 04 15:00:27 UTC 2025", "author":[{"@type":"Person","name":"Ana-Maria Raimond"},{"@type":"Person","name":"Bénédicte Bucher"},{"@type":"Person","name":"Marie-Dominique Van Damme"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -119,6 +119,10 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#http://purl.org/www.umr-lastig.fr/geodata#Geocatalog"
+         title="http://purl.org/www.umr-lastig.fr/geodata#Geocatalog">Geocatalog</a>
+   </li>
+   <li>
       <a href="#http://purl.org/www.umr-lastig.fr/geodata#Geodata_process"
          title="http://purl.org/www.umr-lastig.fr/geodata#Geodata_process">
          <span>Geodata process</span>
@@ -209,6 +213,12 @@ This ontology has the following classes and properties.</span>
          <span>mdvandamme</span>
       </a>
    </li>
+   <li>
+      <a href="#http://purl.org/www.umr-lastig.fr/geodata#ymeneroux"
+         title="http://purl.org/www.umr-lastig.fr/geodata#ymeneroux">
+         <span>ymeneroux</span>
+      </a>
+   </li>
 </ul>
 </div>
   
@@ -227,6 +237,7 @@ This section provides details for each class and property defined by Ontology fo
  <ul class="hlist">
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#Collection" title="http://purl.org/www.umr-lastig.fr/geodata#Collection"> <span>Collection</span> </a></li>
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#CollectionItem" title="http://purl.org/www.umr-lastig.fr/geodata#CollectionItem"> <span>Collection Item</span> </a></li>
+  <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#Geocatalog" title="http://purl.org/www.umr-lastig.fr/geodata#Geocatalog">Geocatalog</a></li>
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#Geodata_process" title="http://purl.org/www.umr-lastig.fr/geodata#Geodata_process"> <span>Geodata process</span> </a></li>
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#Geodataset" title="http://purl.org/www.umr-lastig.fr/geodata#Geodataset">Geodataset</a></li>
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#Geodataset_series" title="http://purl.org/www.umr-lastig.fr/geodata#Geodataset_series"> <span>Geodataset series</span> </a></li>
@@ -263,6 +274,21 @@ This section provides details for each class and property defined by Ontology fo
    </dd>
   </dl>
  </div>
+ <div class="entity" id="http://purl.org/www.umr-lastig.fr/geodata#Geocatalog">
+  <h3>Geocatalog<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/www.umr-lastig.fr/geodata#Geocatalog</p>
+  <div class="comment">
+   <span class="markdown">Geocatalog</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/dcat#Catalog" target="_blank" title="http://www.w3.org/ns/dcat#Catalog">Catalog</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/www.umr-lastig.fr/geodata#Geodataset" title="http://purl.org/www.umr-lastig.fr/geodata#Geodataset">Geodataset</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="http://purl.org/www.umr-lastig.fr/geodata#Geodata_process">
   <h3>Geodata process<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.org/www.umr-lastig.fr/geodata#Geodata_process</p>
@@ -292,7 +318,7 @@ This section provides details for each class and property defined by Ontology fo
     has sub-classes
    </dt>
    <dd>
-    <a href="#http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset" title="http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset">Research Geodataset</a> <sup class="type-c" title="class">c</sup>
+    <a href="#http://purl.org/www.umr-lastig.fr/geodata#Geocatalog" title="http://purl.org/www.umr-lastig.fr/geodata#Geocatalog">Geocatalog</a> <sup class="type-c" title="class">c</sup>, <a href="#http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset" title="http://purl.org/www.umr-lastig.fr/geodata#ResearchGeodataset">Research Geodataset</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has members
@@ -438,6 +464,7 @@ This section provides details for each class and property defined by Ontology fo
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#geodata-paris" title="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"> <span>geodata paris</span> </a></li>
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#ign" title="http://purl.org/www.umr-lastig.fr/geodata#ign"> <span>ign</span> </a></li>
   <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#mdvandamme" title="http://purl.org/www.umr-lastig.fr/geodata#mdvandamme"> <span>mdvandamme</span> </a></li>
+  <li><a href="#http://purl.org/www.umr-lastig.fr/geodata#ymeneroux" title="http://purl.org/www.umr-lastig.fr/geodata#ymeneroux"> <span>ymeneroux</span> </a></li>
  </ul>
  <div class="entity" id="http://purl.org/www.umr-lastig.fr/geodata#amraimond">
   <h3>amraimond<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
@@ -700,6 +727,39 @@ This section provides details for each class and property defined by Ontology fo
    </dd>
    <dd>
     <a href="http://xmlns.com/foaf/0.1/workInfoHomepage" target="_blank" title="http://xmlns.com/foaf/0.1/workInfoHomepage">work Info Homepage</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"https://www.umr-lastig.fr/mdvandamme/"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/www.umr-lastig.fr/geodata#ymeneroux">
+  <h3>ymeneroux<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/www.umr-lastig.fr/geodata#ymeneroux</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Agent" target="_blank" title="http://www.w3.org/ns/prov#Agent">Agent</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="http://www.w3.org/ns/prov#Person" target="_blank" title="http://www.w3.org/ns/prov#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/Person" target="_blank" title="http://xmlns.com/foaf/0.1/Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/family_name" target="_blank" title="http://xmlns.com/foaf/0.1/family_name">family name</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Ménéroux"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/givenname" target="_blank" title="http://xmlns.com/foaf/0.1/givenname">givenname</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Yann"</span>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/member" target="_blank" title="http://xmlns.com/foaf/0.1/member">member</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#http://purl.org/www.umr-lastig.fr/geodata#geodata-paris" title="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris">geodata paris</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/name" target="_blank" title="http://xmlns.com/foaf/0.1/name">name</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"Yann Méneroux"</span>
    </dd>
   </dl>
  </div>

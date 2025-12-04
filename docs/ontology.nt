@@ -152,6 +152,13 @@
 <http://purl.org/www.umr-lastig.fr/geodata#CollectionItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/www.umr-lastig.fr/geodata#CollectionItem> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection item is composed of different pieces of data, usually selections from bigger datasets, associated with a proposed visualisation, and narratives that connect the visual items to the concepts of the collection. It has a spatial and temporal extent." .
 # 
+# http://purl.org/www.umr-lastig.fr/geodata#Geocatalog
+<http://purl.org/www.umr-lastig.fr/geodata#Geocatalog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/www.umr-lastig.fr/geodata#Geocatalog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/www.umr-lastig.fr/geodata#Geodataset> .
+<http://purl.org/www.umr-lastig.fr/geodata#Geocatalog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Catalog> .
+<http://purl.org/www.umr-lastig.fr/geodata#Geocatalog> <http://www.w3.org/2000/01/rdf-schema#comment> "Geocatalog"@en .
+<http://purl.org/www.umr-lastig.fr/geodata#Geocatalog> <http://www.w3.org/2000/01/rdf-schema#label> "Geocatalog"@en .
+# 
 # http://purl.org/www.umr-lastig.fr/geodata#Geodata_process
 <http://purl.org/www.umr-lastig.fr/geodata#Geodata_process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/www.umr-lastig.fr/geodata#Geodata_process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Resource> .
@@ -234,6 +241,16 @@
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://xmlns.com/foaf/0.1/name> "Marie-Dominique Van Damme" .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://xmlns.com/foaf/0.1/title> "Mme." .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://xmlns.com/foaf/0.1/workInfoHomepage> "https://www.umr-lastig.fr/mdvandamme/" .
+# 
+# http://purl.org/www.umr-lastig.fr/geodata#ymeneroux
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Person> .
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://xmlns.com/foaf/0.1/family_name> "Ménéroux" .
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://xmlns.com/foaf/0.1/givenname> "Yann" .
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://xmlns.com/foaf/0.1/member> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
+<http://purl.org/www.umr-lastig.fr/geodata#ymeneroux> <http://xmlns.com/foaf/0.1/name> "Yann Méneroux" .
 # 
 # http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3
 <http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
