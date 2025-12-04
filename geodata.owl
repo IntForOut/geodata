@@ -290,6 +290,17 @@
     
 
 
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#Geocatalog -->
+
+    <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Geocatalog">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#Geodataset"/>
+        <rdfs:comment xml:lang="en">Geocatalog</rdfs:comment>
+        <rdfs:label xml:lang="en">Geocatalog</rdfs:label>
+    </owl:Class>
+
+
+
     <!-- http://purl.org/www.umr-lastig.fr/geodata#Geodata_process -->
 
     <owl:Class rdf:about="http://purl.org/www.umr-lastig.fr/geodata#Geodata_process">
@@ -416,6 +427,19 @@
         <foaf:workInfoHomepage>https://www.umr-lastig.fr/mdvandamme/</foaf:workInfoHomepage>
     </owl:NamedIndividual>
     
+
+
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#ymeneroux -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#ymeneroux">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <foaf:family_name>Ménéroux</foaf:family_name>
+        <foaf:givenname>Yann</foaf:givenname>
+        <foaf:member rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
+        <foaf:name>Yann Méneroux</foaf:name>
+    </owl:NamedIndividual>
 
 
     <!-- http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3 -->
