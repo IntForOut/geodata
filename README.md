@@ -6,7 +6,7 @@ Documentation site: **[geodata](https://www.umr-lastig.fr/geodata/index.html)**
 
 
 
-# Projects that use this ontology to identify and promote open research and education on key concepts :
+# Projects that use this ontology:
 
 * INTFOROUT: **[geodata](https://www.umr-lastig.fr/geodata/index.html)**
 * SUBDENSE: ...
