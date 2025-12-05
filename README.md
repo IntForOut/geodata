@@ -8,7 +8,7 @@ Documentation site: **[geodata](https://www.umr-lastig.fr/geodata/index.html)**
 
 # Projects that use this ontology:
 
-* INTFOROUT: **[geodata](https://www.umr-lastig.fr/geodata/index.html)**
+* INTFOROUT: **[OutdoorPressure](https://intforout.github.io/outdoorPressure/index.html)**
 * SUBDENSE: ...
 
 
