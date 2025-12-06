@@ -301,6 +301,21 @@
     "@value" : "Institut national de l'information géographique et forestière"
   } ]
 }, {
+  "@id" : "http://purl.org/www.umr-lastig.fr/geodata#jadawson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/prov#Agent", "http://www.w3.org/ns/prov#Person", "http://xmlns.com/foaf/0.1/Person" ],
+  "http://xmlns.com/foaf/0.1/family_name" : [ {
+    "@value" : "Dawson"
+  } ],
+  "http://xmlns.com/foaf/0.1/givenname" : [ {
+    "@value" : "John-Andrew"
+  } ],
+  "http://xmlns.com/foaf/0.1/member" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"
+  } ],
+  "http://xmlns.com/foaf/0.1/name" : [ {
+    "@value" : "John-Andrew Dawson"
+  } ]
+}, {
   "@id" : "http://purl.org/www.umr-lastig.fr/geodata#mdvandamme",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/prov#Agent", "http://www.w3.org/ns/prov#Person", "http://xmlns.com/foaf/0.1/Person" ],
   "http://xmlns.com/foaf/0.1/family_name" : [ {

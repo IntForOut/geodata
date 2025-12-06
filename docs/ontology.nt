@@ -230,6 +230,16 @@
 <http://purl.org/www.umr-lastig.fr/geodata#ign> <http://xmlns.com/foaf/0.1/homepage> <https://www.ign.fr/> .
 <http://purl.org/www.umr-lastig.fr/geodata#ign> <http://xmlns.com/foaf/0.1/name> "Institut national de l'information géographique et forestière" .
 # 
+# http://purl.org/www.umr-lastig.fr/geodata#jadawson
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Person> .
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://xmlns.com/foaf/0.1/family_name> "Dawson" .
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://xmlns.com/foaf/0.1/givenname> "John-Andrew" .
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://xmlns.com/foaf/0.1/member> <http://purl.org/www.umr-lastig.fr/geodata#geodata-paris> .
+<http://purl.org/www.umr-lastig.fr/geodata#jadawson> <http://xmlns.com/foaf/0.1/name> "John-Andrew Dawson" .
+# 
 # http://purl.org/www.umr-lastig.fr/geodata#mdvandamme
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/www.umr-lastig.fr/geodata#mdvandamme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .

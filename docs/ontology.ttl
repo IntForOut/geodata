@@ -257,6 +257,17 @@ xsd:date rdf:type rdfs:Datatype .
      <http://xmlns.com/foaf/0.1/name> "Institut national de l'information géographique et forestière" .
 
 
+###  http://purl.org/www.umr-lastig.fr/geodata#jadawson
+:jadawson rdf:type owl:NamedIndividual ,
+                   <http://www.w3.org/ns/prov#Agent> ,
+                   <http://www.w3.org/ns/prov#Person> ,
+                   <http://xmlns.com/foaf/0.1/Person> ;
+          <http://xmlns.com/foaf/0.1/family_name> "Dawson" ;
+          <http://xmlns.com/foaf/0.1/givenname> "John-Andrew" ;
+          <http://xmlns.com/foaf/0.1/member> :geodata-paris ;
+          <http://xmlns.com/foaf/0.1/name> "John-Andrew Dawson" .
+
+
 ###  http://purl.org/www.umr-lastig.fr/geodata#mdvandamme
 :mdvandamme rdf:type owl:NamedIndividual ,
                      <http://www.w3.org/ns/prov#Agent> ,
