@@ -442,6 +442,21 @@
     </owl:NamedIndividual>
 
 
+
+    <!-- http://purl.org/www.umr-lastig.fr/geodata#jadawson -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#jadawson">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <foaf:family_name>Dawson</foaf:family_name>
+        <foaf:givenname>John-Andrew</foaf:givenname>
+        <foaf:member rdf:resource="http://purl.org/www.umr-lastig.fr/geodata#geodata-paris"/>
+        <foaf:name>John-Andrew Dawson</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3 -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/www.umr-lastig.fr/geodata#BD_TOPO®_V3">
