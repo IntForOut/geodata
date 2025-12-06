@@ -6,6 +6,12 @@ Documentation site: **[geodata](https://www.umr-lastig.fr/geodata/index.html)**
 
 
 
+# Projects that use this ontology:
+
+* INTFOROUT: **[OutdoorPressure](https://intforout.github.io/outdoorPressure/index.html)**
+* SUBDENSE: ...
+
+
 ## Acknowledgements
 
 This work was supported by the ANR research project IntForOut (ANR-23-CE55-0003): Multisource spatial data INTegration FOR the Monitoring of Ecosystems under the pressure of OUTdoor recreation.
